@@ -3,5 +3,5 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
     
 <%
-	response.sendRedirect("/ProjectReal/mainForm.do");
+	response.sendRedirect("/Project/mainForm.do");
 %>
