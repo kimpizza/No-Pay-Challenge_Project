@@ -22,6 +22,7 @@
     <!-- Header -->
     <nav>
         <ul>
+        <!-- 로그인 안했을때 -->
 			<c:if test="${empty mvo}">
 			<li><a href="">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
@@ -31,10 +32,11 @@
 			<li><a href="" onclick="checkLogin()">My Page</a></li>
 		    	<li><a class="login_btn" id="login">Login</a></li>
 		    </c:if>
+		    <!-- 로그인 했을때 -->
 		    <c:if test="${!empty mvo}">
 		    <li><a href="">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="">Level</a></li>
+			<li><a href="${cpath}/levelList.do">Level</a></li>
 			<li><a href="${cpath}/boardList.do">Board</a></li>
 			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
 		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>

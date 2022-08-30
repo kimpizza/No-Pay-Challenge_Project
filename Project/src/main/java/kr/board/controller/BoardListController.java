@@ -18,10 +18,9 @@ public class BoardListController implements Controller {
 			throws ServletException, IOException {
 		Board vo = new Board();
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		List<Board> list = dao.allList();
-		System.out.println(list);
-		request.setAttribute("list", list); // 객체바인딩
-		//System.out.println(list.get(0));
+		List<Board> list = dao.allList(); // join을 이용해 불러온다
+		request.setAttribute("list", list);
+		System.out.println(list.get(0));
 		//String nextPage = "boardList";
 		return "boardList";
 	}

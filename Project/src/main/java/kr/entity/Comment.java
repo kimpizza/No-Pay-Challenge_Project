@@ -7,18 +7,20 @@ public class Comment {
 	private String comm_cmt_content; // 댓글 내용
 	private String comm_cmt_date; // 댓글 작성 날짜
 	private String mb_id; // 댓글 작성자
+	private String mb_name;
 	
 	public Comment() {
 		
 	}
 	
 	
-	public Comment(int comm_cmt_seq, int comm_seq, String comm_cmt_content, String comm_cmt_date, String mb_id) {
+	public Comment(int comm_cmt_seq, int comm_seq, String comm_cmt_content, String comm_cmt_date, String mb_id, String mb_name) {
 		this.comm_cmt_seq = comm_cmt_seq;
 		this.comm_seq = comm_seq;
 		this.comm_cmt_content = comm_cmt_content;
 		this.comm_cmt_date = comm_cmt_date;
 		this.mb_id = mb_id;
+		this.mb_name = mb_name;
 	}
 
 
@@ -61,6 +63,16 @@ public class Comment {
 
 	public void setMb_id(String mb_id) {
 		this.mb_id = mb_id;
+	}
+
+
+	public String getMb_name() {
+		return mb_name;
+	}
+
+
+	public void setMb_name(String mb_name) {
+		this.mb_name = mb_name;
 	}
 	
 	

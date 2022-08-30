@@ -18,7 +18,10 @@
     <!-- values엔 vo에 들어가있는 값이 들어간다 -->
   </insert>
   <select id = "boardView" parameterType = "int" resultType = "kr.entity.Board"> 
-    select * from TBL_COMMUNITY where COMM_SEQ = #{COMM_SEQ}
+    select t.comm_seq, t.comm_title, t.comm_content, t.comm_date, m.mb_name, t.comm_cnt
+	from TBL_COMMUNITY t 
+	INNER JOIN TBL_MEMBER m on t.mb_id = m.mb_id
+	where COMM_SEQ = #{COMM_SEQ}
   </select>
   <update id = "boardUpdate" parameterType = "kr.entity.Board">
     UPDATE TBL_COMMUNITY SET COMM_TITLE = #{comm_title}, COMM_CONTENT = #{comm_content} where COMM_SEQ = #{comm_seq}
@@ -35,11 +38,11 @@
   
   <select id = "rescent" resultType = "kr.entity.Board">
     select *
-from (
-        select * from
-        tbl_community
-        order by comm_date desc
-    )
-where rownum = 1
+	from (
+	        select * from
+	        tbl_community
+	        order by comm_date desc
+	    )
+	where rownum = 1
   </select>
 </mapper>

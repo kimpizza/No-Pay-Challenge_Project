@@ -20,7 +20,7 @@
 </head>
 <body class="is-preload">
 	
-	<form method=get action='${cpath}/boardWrite.do'>
+	<form method=get action='${cpath}/boardWriteForm.do'>
 			<!-- Header -->
     <nav>
         <ul>
