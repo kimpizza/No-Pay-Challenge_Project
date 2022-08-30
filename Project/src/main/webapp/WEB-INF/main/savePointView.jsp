@@ -47,7 +47,11 @@
 					<br>
 						<h2 id="title">글제목</h2>
 						<p id="write">관리자</p>
+<<<<<<< HEAD
 						<p id="date">${vo.save_date}</p>
+=======
+						<p id="date">날짜</p>
+>>>>>>> a3c275bf077cfcff3db23c03397a861e05c1066e
 					</header>
 					<div class="box">
 							<div class="row-6 row-12-mobilep">
