@@ -41,6 +41,29 @@
 			
 		</ul>
       </nav>
+      
+      <!--이벤트-->
+<section class="box">
+	<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br><br><br>
+	<img src="img/보조금.png"style="position: absolute;left:5.5%; width: 90%;height: 69%;top:17.8%;">	
+	<img src="img/보조금_배경.png"style="position: absolute;left:15.5%; width: 76%;height: 49%;top:25.8%;">
+	<img src="img/그림1.jpg"style="width:23%;position: absolute;left:18%;top:29.8%">
+	<img src="img/그림2.jpg"style="width:23%;position: absolute;left:42%;top:29.8%">
+	<img src="img/그림3.jpg"style="width:23%;position: absolute;left:66%;top:29.8%">
+	<img src="img/라디오.png"style="width:2%;position: absolute;left: 51%;top:76.8%">
+	<img src="img/보조금_사람.png"style="width:25%;position: absolute;left:7%;top:56%">
+	<img src="img/보조금_제목.png"style="position: absolute;left:5.5%; width: 23%;height: 28%;top:16.5%;">
+</section>
+      
 		<!--글목록-->
 		<div class="row">
 			<div class="col-12">
