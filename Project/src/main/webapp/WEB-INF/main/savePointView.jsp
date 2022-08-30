@@ -43,9 +43,11 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
+					<br>
+					<br>
 						<h2 id="title">글제목</h2>
-						<p id="write">작성자</p>
-						<div id="date">날짜</div>
+						<p id="write">관리자</p>
+						<p id="date">날짜</p>
 					</header>
 					<div class="box">
 							<div class="row-6 row-12-mobilep">
@@ -53,7 +55,7 @@
 								<tr>
 									<p>${vo.save_seq}</p>
 									<p>${vo.save_content}<br></p>
-									<p>관리자</p>
+									
 								</tr>
 								</br>
 							</div>
