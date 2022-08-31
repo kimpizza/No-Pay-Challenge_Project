@@ -10,6 +10,7 @@ import kr.board.controller.BoardWriteController;
 import kr.board.controller.BoardWriteFormController;
 import kr.board.controller.Controller;
 import kr.comment.controller.CommWriteController;
+import kr.level.controller.LevelListController;
 import kr.main.controller.MainFormController;
 import kr.savepoint.controller.SavePointListController;
 import kr.savepoint.controller.SavePointViewController;
@@ -48,6 +49,11 @@ public class HandlerMapping {
 		mappings.put("/boardView.do", new BoardViewController());
 		mappings.put("/challenge.do", new ChallengeController());
 		mappings.put("/challengeForm.do", new ChallengeFormController());
+<<<<<<< HEAD
+=======
+		mappings.put("/levelList.do", new LevelListController());
+		
+>>>>>>> 1c5a6175492596d0dd505843e435eb2f03426edb
 	}
 	// command를 매개변수로 받아와 그 command에 해당하는 value값 리턴
 	public Controller getController(String command) { // command : key

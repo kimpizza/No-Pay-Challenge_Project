@@ -53,7 +53,7 @@ pageContext.setAttribute("newLineChar", "\n");
 		<section id="main" class="container">
 			<header>
 				<h2 id="title">${vo.comm_title}</h2>
-				<p id="write">${vo.mb_id}</p>
+				<p id="write">${vo.mb_name}</p>
 				<p id="date">${vo.comm_date}</p>
 			</header>
 			<div class="box">
@@ -74,7 +74,7 @@ pageContext.setAttribute("newLineChar", "\n");
 								<tr>
 									<td>${vo.comm_cmt_seq}</td>
 									<td>${vo.comm_cmt_content}</td>
-									<td>${vo.mb_id}</td>
+									<td>${vo.mb_name}</td>
 								</tr>
 								</br>
 							</c:forEach>
