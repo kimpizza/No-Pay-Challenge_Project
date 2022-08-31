@@ -68,15 +68,14 @@ pageContext.setAttribute("newLineChar", "\n");
 						<table>
 							<tbody>
 									<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
-								<c:forEach var="vo" items="${list}">
+								<c:forEach var="vo" items="${list}" varStatus="status">
 								<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
 								<tr>
-									<td>${vo.comm_cmt_seq}</td>
+									<td>${status.index + 1}</td>
 									<td>${vo.comm_cmt_content}</td>
 									<td>${vo.mb_name}</td>
 								</tr>
-								</br>
-							</c:forEach>
+							</c:forEach></br>
 								</br>
 							</tbody>
 						</table>

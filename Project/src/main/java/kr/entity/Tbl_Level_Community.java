@@ -6,13 +6,13 @@ public class Tbl_Level_Community {
 	private String lv_content; // 레벨 게시판 내용
 	private String lv_date; // 레벨 게시판 작성시간
 	private String mb_id; // 작성 회원 id
+	private String mb_name; // 작성 회원 id
 	private int lv_cnt; // 레벨 게시판 조회수
-	
 	public Tbl_Level_Community(){
 		
 	}
 
-	public Tbl_Level_Community(int lv_seq, String lv_title, String lv_content, String lv_date, String mb_id,
+	public Tbl_Level_Community(int lv_seq, String lv_title, String lv_content, String lv_date, String mb_id, String mb_name,
 			int lv_cnt) {
 		super();
 		this.lv_seq = lv_seq;
@@ -20,7 +20,7 @@ public class Tbl_Level_Community {
 		this.lv_content = lv_content;
 		this.lv_date = lv_date;
 		this.mb_id = mb_id;
-		this.lv_cnt = lv_cnt;
+		this.mb_name = mb_name;
 	}
 
 	public int getLv_seq() {
@@ -63,6 +63,16 @@ public class Tbl_Level_Community {
 		this.mb_id = mb_id;
 	}
 
+	
+	
+	public String getMb_name() {
+		return mb_name;
+	}
+
+	public void setMb_name(String mb_name) {
+		this.mb_name = mb_name;
+	}
+
 	public int getLv_cnt() {
 		return lv_cnt;
 	}
@@ -70,5 +80,5 @@ public class Tbl_Level_Community {
 	public void setLv_cnt(int lv_cnt) {
 		this.lv_cnt = lv_cnt;
 	}
-	
+
 }

@@ -8,7 +8,7 @@
   <!-- 해당 SQL을 메소드와 연결해서 처리. id : 메소드명, resulttype : return, parameter type : 매개변수 -->
   <select id = "commAllList" resultType = "kr.entity.Comment" parameterType='int'><!-- id : DAO의 메소드이름 -->
     <!-- 게시판 번호에 맞는 댓글만 보여준다 -->
-    select c.COMM_CMT_SEQ,c.COMM_CMT_CONTENT,c.MB_ID, m.mb_name
+    select c.COMM_CMT_SEQ,c.COMM_CMT_CONTENT,c.MB_ID, m.mb_name,c.COMM_CMT_DATE
 	from TBL_COMM_COMMENT c
 	INNER JOIN TBL_MEMBER m on c.mb_id = m.mb_id
 	WHERE COMM_SEQ = #{comm_seq} order by COMM_CMT_SEQ ASC
