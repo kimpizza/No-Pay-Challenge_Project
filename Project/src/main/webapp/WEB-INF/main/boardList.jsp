@@ -21,6 +21,8 @@
 <body class="is-preload">
 	
 	<form method=get action='${cpath}/boardWrite.do'>
+	
+	
 			<!-- Header -->
     <nav>
         <ul>

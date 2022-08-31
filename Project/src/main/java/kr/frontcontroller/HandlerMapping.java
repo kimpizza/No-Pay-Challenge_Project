@@ -47,7 +47,7 @@ public class HandlerMapping {
 		mappings.put("/memberDelete.do", new MemberDeleteController());
 		mappings.put("/boardView.do", new BoardViewController());
 		mappings.put("/challenge.do", new ChallengeController());
-		mappings.put("/challengeForm.do", new ChallengeFormController());	
+		mappings.put("/challengeForm.do", new ChallengeFormController());
 	}
 	// command를 매개변수로 받아와 그 command에 해당하는 value값 리턴
 	public Controller getController(String command) { // command : key

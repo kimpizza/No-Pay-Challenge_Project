@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
@@ -93,10 +94,13 @@ pageContext.setAttribute("newLineChar", "\n");
 		<ul class="actions special">
 			<li><input type="button" value="목록으로" id="goList"
 				onclick="goList()" /></li>
-			<li><input type="button" value="수정하기" id="update"
-				onclick="goUpdate()" /></li>
-			<li><input type="button" value="삭제하기" id="delete"
-				onclick="goDelete()" /></li>
+				
+			  <c:if test="${vo.mb_id eq mvo.mb_id}">
+				<li><input type="button" value="수정하기" id="update"
+					onclick="goUpdate()" /></li>
+				<li><input type="button" value="삭제하기" id="delete"
+					onclick="goDelete()" /></li>
+			  </c:if>
 		</ul>
 	</div>
 				</br></br>

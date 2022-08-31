@@ -103,7 +103,8 @@
 				  </div>
 				  <div class="col-12">
 					<ul class="actions special">
-						<li><input type="submit" value="반성하기" id= "input_Money" style="position: absolute; top:79.8%; left: 45.5%;"/></li>
+					<!-- 확인 -->
+						<li><input type="submit" value="반성하기" onclick="over()" id= "input_Money" style="position: absolute; top:79.8%; left: 45.5%;"/></li>
 					
 					</ul>
 				
@@ -111,6 +112,13 @@
 				</form>
 				</div>
 				</section>
+				<script>
+		function over(){
+			alert("9월 되면 되는지 확인 하기~~")
+			if(${mvo.challenge_total < sum}){
+				alert("으이구~~돈 좀 아껴써라~🤦‍🤦‍♂️🤦💸💸💸💸💸")
+			}
+		}</script>
 
 
 				</section>
@@ -158,6 +166,12 @@
 					</div>
 					</div>
 				  </div>				  
+<!-- 인스타 -->
+<br>
+<br>
+<h2 style="text-align: left;text-align: center;">무지출챌린지 공식 계정</h2>
+<iframe src="https://snapwidget.com/embed/1008851" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:900px; height:400px"></iframe>
+<!--글목록-->
 
 <!--글목록-->
 <div class="row">

@@ -2,6 +2,7 @@ package kr.tbl_member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.board.controller.Controller;
+import kr.dao.ChallDAO;
 import kr.dao.MemberMyBatisDAO;
+import kr.entity.sumMonthPay;
 import kr.entity.tbl_member;
 
 
@@ -47,7 +50,22 @@ public class LoginController implements Controller {
 			// 객체바인딩
 			session.setAttribute("mvo",mvo);      
 		} 
+		//
+		ChallDAO dao2 = new ChallDAO();
+		int sum=0;
+		List<sumMonthPay> paylist = dao2.sumMonPay(mb_id);
 		
+		for(sumMonthPay p:paylist) {
+			for(int j=1;j<=7;j++) {
+				if(p.getDay().equals("2022090"+j)) { 
+					sum+= p.getSumPay();
+				}
+			}
+		}
+		HttpSession session = request.getSession();
+
+		session.setAttribute("sum", sum); 
+		//
 		
 		
 		
