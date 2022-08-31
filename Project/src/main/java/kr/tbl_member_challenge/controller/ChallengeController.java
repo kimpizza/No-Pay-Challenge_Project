@@ -21,7 +21,7 @@ public class ChallengeController implements Controller {
 		String mb_id = request.getParameter("mb_id");
 		//request.setAttribute("mb_id", mb_id); 
 		int pay_money = Integer.parseInt(request.getParameter("pay_money"));
-		System.out.println(pay_money);
+		
 		
 		  String[] items = request.getParameterValues("priority");
 		  int comm_item_seq = 0; 
@@ -38,10 +38,9 @@ public class ChallengeController implements Controller {
 		  ChallDAO dao = new ChallDAO();
 		  dao.insertChall(c);
 		  
-		System.out.println(mb_id); 
 		if(aaa.equals("aaa")) {
 			
-			return "redirect:/challengeForm.do?"; 
+			return "redirect:/challengeForm.do";
 		}
 		
 		return "redirect:/mainForm.do"; 

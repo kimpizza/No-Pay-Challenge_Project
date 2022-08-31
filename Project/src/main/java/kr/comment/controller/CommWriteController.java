@@ -17,6 +17,8 @@ public class CommWriteController implements Controller {
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		request.setCharacterEncoding("utf-8");
 		CommMyBatisDAO dao = new CommMyBatisDAO();
 		Comment cmt = new Comment(); 

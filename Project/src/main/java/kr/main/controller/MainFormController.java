@@ -6,10 +6,14 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.board.controller.Controller;
 import kr.dao.BoardMyBatisDAO;
+import kr.dao.ChallDAO;
 import kr.entity.Board;
+import kr.entity.sumMonthPay;
+import kr.entity.tbl_member;
 
 
 public class MainFormController implements Controller {
@@ -20,6 +24,8 @@ public class MainFormController implements Controller {
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
 		List<Board> list = dao.allList();
 		request.setAttribute("list", list);
+		
+		
 		
 		return "main";
 	}
