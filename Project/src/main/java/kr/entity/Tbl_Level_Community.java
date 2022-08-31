@@ -1,6 +1,15 @@
 package kr.entity;
 
 public class Tbl_Level_Community {
+	private int level;
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
 	private int lv_seq; // 레벨 게시판 글 번호
 	private String lv_title; // 레벨 게시판 제목
 	private String lv_content; // 레벨 게시판 내용

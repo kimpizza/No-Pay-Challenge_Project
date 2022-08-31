@@ -1,7 +1,6 @@
 package kr.dao;
 
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -30,7 +29,9 @@ public class LevelMyBatisDAO {
 		// mapper파일에 있는 select문 실행 (SQL연결)		
 		// SQL 쿼리를 알아야 한다
 		System.out.println("level:"+level);
-		List<Tbl_Level_Community> list = session.selectList("levelList", Integer.toString(level)); // 여러개를 가져오는 selectList / id이름을 찾아간다
+		Tbl_Level_Community tb = new Tbl_Level_Community();
+		tb.setLevel(level);
+		List<Tbl_Level_Community> list = session.selectList("levelList", tb); // 여러개를 가져오는 selectList / id이름을 찾아간다
 		session.close(); // 세션 반납
 		return list;
 	}
