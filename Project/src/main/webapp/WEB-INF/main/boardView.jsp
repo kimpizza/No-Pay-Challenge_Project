@@ -63,7 +63,7 @@ pageContext.setAttribute("newLineChar", "\n");
 					
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				<c:if test="${vo.filename != '김재강김재강김재강'}">
+				<c:if test="${vo.filename != 'gdjhkgdfhkgldfhlktgdfskt이런거 파일명으로 하는 사람은 없을거잖아요dshaksdsf14@%@Z^$Z%&Zzzzzzzzzz'}"> 
 				<c:set var="text2" value="${vo.filename}"/>
 				<c:set var="text" value="${fn:split(text2,'.')[1]}"/>
 				<c:if test="${text eq 'jpg' or text eq 'png' or text eq 'gif'}">
