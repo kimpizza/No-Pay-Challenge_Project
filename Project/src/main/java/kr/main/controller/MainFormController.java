@@ -22,7 +22,7 @@ public class MainFormController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		List<Board> list = dao.allList();
+		List<Board> list = dao.topList();
 		request.setAttribute("list", list);
 		
 		

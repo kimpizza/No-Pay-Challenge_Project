@@ -31,7 +31,7 @@
 			<li><a href="${cpath}/boardList.do">Board</a></li>
 			<li><a href="" onclick="checkLogin()">My Challenge</a></li>
 			<li><a href="" onclick="checkLogin()">My Page</a></li>
-		    	<li><a class="login_btn" id="login">Login</a></li>
+		    	
 		    </c:if>
 		    <c:if test="${!empty mvo}">
 		    <li><a href="${cpath}/mainForm.do">Home</a></li>

@@ -71,7 +71,7 @@ public class BoardWriteController implements Controller {
 				vo.setComm_title(title);
 				vo.setComm_content(content);
 			if(filename==null) { 
-				filename="김재강김재강김재강";
+				filename="너무길hgf면gdf안되나fgg"; 
 				vo.setFilename(filename);
 				dao.boardWrite(vo);
 				vo = dao.rescent();

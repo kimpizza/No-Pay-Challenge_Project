@@ -63,14 +63,14 @@ pageContext.setAttribute("newLineChar", "\n");
 					
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				<c:if test="${vo.filename != 'gdjhkgdfhkgldfhlktgdfskt이런거 파일명으로 하는 사람은 없을거잖아요dshaksdsf14@%@Z^$Z%&Zzzzzzzzzz'}"> 
+				<c:if test="${vo.filename != '너무길hgf면gdf안되나fgg'}"> 
 				<c:set var="text2" value="${vo.filename}"/>
 				<c:set var="text" value="${fn:split(text2,'.')[1]}"/>
-				<c:if test="${text eq 'jpg' or text eq 'png' or text eq 'gif'}">
-					<img src="upload/${vo.filename}"><br/>
+				<c:if test="${text eq 'jpg' or text eq 'png' or text eq 'gif' or text eq 'JPG' or text eq 'PNG' or text eq 'GIF'}">
+					<img src="upload/${vo.filename}" style="max-width:600px; height:auto;"><br/>
 				</c:if>
-				<c:if test="${text != 'jpg' and text != 'png' and text != 'gif'}">
-					<a href="upload/${vo.filename}" id="filename">${vo.filename}</a>
+				<c:if test="${text != 'jpg' and text != 'png' and text != 'gif' and text != 'GIF' and text != 'PNG' and text != 'JPG'}">
+					<a href="upload/${vo.filename}" id="filename">${vo.filename}</a> 
 				</c:if>
 				</c:if>
 				<br/>
@@ -95,8 +95,10 @@ pageContext.setAttribute("newLineChar", "\n");
 						</table>
 						<input type="hidden" name="num" value = ${vo.comm_seq}>
 						<div class="col-9 col-12-mobilep">
+						<c:if test="${!empty mvo}">
 							<input type="text" name="comment" id="query" value placeholder="댓글을 입력하세요" style="width: 88%;">
 							<input type="submit" value="작성" style="background-color:#141A35">
+						</c:if>
 						</div>
 				</form>
 			</div>
