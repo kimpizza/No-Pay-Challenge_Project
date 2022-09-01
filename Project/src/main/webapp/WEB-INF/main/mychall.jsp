@@ -11,6 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
   <link rel="stylesheet" href="CSS/mychallenge.css">
   <link rel="stylesheet" href="CSS/header.css">
   <style type="text/css">
@@ -76,743 +77,25 @@
       <div id="today_box" class="box_shadow"><br>
         <span class="" id="">${mvo.mb_name} </span><br>
         <span>D-${dday}</span>
-        <div id="chartDiv" style="max-width: 250px;height: 250px;margin: 0px auto;">
-          <div id="JSCharting_23053"
-            style="width: 100%; height: 100%; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative; font-family: tahoma, geneva, sans-serif; font-size: 12px;">
-            <svg width="100%" height="100%" text-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" font-family="tahoma, geneva, sans-serif" font-size="12px"
-              font-weight="normal" font-style="normal" style="user-select: none;">
-              <desc>Created with JSCharting</desc>
-              <defs>
-                <pattern width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)" id="_jsc34"
-                  childNodes="[object Object],[object Object]">
-                  <rect width="5" height="5" fill="none"></rect>
-                  <line x1="0" y1="0" x2="0" y2="5" stroke="#a2a2a2"></line>
-                </pattern>
-                <pattern width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)" id="_jsc41"
-                  childNodes="[object Object],[object Object]">
-                  <rect width="5" height="5" fill="rgba(255,255,255,0.6)"></rect>
-                  <line x1="0" y1="0" x2="0" y2="5" stroke="#a2a2a2"></line>
-                </pattern>
-                <clipPath id="_jsc348" clip-rule="evenodd">
-                  <path fill="none"
-                    d="M0 0 h244 v149.85333100000003 h-244 ZM210.14285714285717 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                    clip-rule="evenodd"></path>
-                </clipPath>
-                <clipPath id="_jsc351" clip-rule="evenodd">
-                  <path fill="none"
-                    d="M0 0 h244 v149.85333100000003 h-244 ZM210.14285714285717 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                    clip-rule="evenodd"></path>
-                </clipPath>
-                <linearGradient x1="0.0000" x2="0.0000" y1="0.0000" y2="1.0000" id="_jsc366">
-                  <stop offset="0%" stop-color="#CBF2B7"></stop>
-                  <stop offset="0%" stop-color="#CBF2B7"></stop>
-                  <stop offset="6%" stop-color="#F0F2FD"></stop>
-                  <stop offset="6%" stop-color="#FFFFFF"></stop>
-                  <stop offset="94%" stop-color="#FFFFFF"></stop>
-                  <stop offset="94%" stop-color="#E6E9FD"></stop>
-                  <stop offset="100%" stop-color="#CBF2B7"></stop>
-                  <stop offset="100%" stop-color="#CBF2B7"></stop>
-                </linearGradient>
-              </defs>
-              <g>
-                <g transform="translate(3,3)">
-                  <path stroke-width="0" fill="#FFFFFF"
-                    d="M 0 5 L 0 0 L 5 0 L 239 0 L 244 0 L 244 5 L 244 239 L 244 244 L 239 244 L 5 244 L 0 244 L 0 239 Z">
-                  </path>
-                  <g>
-                    <g>
-                      <g>
-                        <g>
-                          <g></g>
-                          <g>
-                            <g>
-                              <g>
-                                <path stroke-width="0" fill="none"
-                                  d="M 0 5 L 5 0 L 92 0 L 97 0 L 97 5 L 97 23 L 97 28 L 92 28 L 5 28 L 0 28 L 0 23 Z">
-                                </path>
-                                <g fill="#323232" font-size="14" transform="translate(5.5,5.5)"><text>
-                                    <tspan x="0px" y="13.402044150119321" style="text-align: center">무지출 달성표</tspan>
-                                  </text></g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                        <g transform="translate(0,28.393334)">
-                          <g>
-                            <g></g>
-                          </g>
-                          <g>
-                            <g>
-                              <g></g>
-                            </g>
-                            <g transform="translate(244,0)">
-                              <g></g>
-                            </g>
-                            <g transform="translate(0,17.480001)">
-                              <g>
-                                <g>
-                                  <g>
-                                    <rect fill="rgba(0,0,0,0)" width="244" height="150" y="0.1266650000000027" rx="0"
-                                      ry="0">
-                                    </rect>
-                                  </g>
-                                  <g></g>
-                                  <g></g>
-                                  <g>
-                                    <path
-                                      d="M1 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(253,253,253,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(253,253,253,0.6)" display="block"></path>
-                                    <path
-                                      d="M1 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M1 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M1 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M1 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M35.85714285714286 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M35.85714285714286 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M35.85714285714286 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M35.85714285714286 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M35.85714285714286 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M70.71428571428571 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M70.71428571428571 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M70.71428571428571 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M70.71428571428571 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M70.71428571428571 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M105.57142857142857 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M105.57142857142857 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M105.57142857142857 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M105.57142857142857 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M105.57142857142857 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M140.42857142857144 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M140.42857142857144 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M140.42857142857144 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M140.42857142857144 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M140.42857142857144 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(253,253,253,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(253,253,253,0.6)" display="block"></path>
-                                    <path
-                                      d="M175.2857142857143 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M175.2857142857143 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M175.2857142857143 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M175.2857142857143 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M175.2857142857143 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(253,253,253,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(253,253,253,0.6)" display="block"></path>
-                                    <path
-                                      d="M210.14285714285717 1.0000000000000018 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M210.14285714285717 30.970666200000007 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M210.14285714285717 60.94133240000001 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(255,255,0,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(209,244,191,0.6)" display="block"></path>
-                                    <path
-                                      d="M210.14285714285717 90.9119986 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="url(#_jsc41)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(255,255,255,0.6)" display="block"></path>
-                                    <path
-                                      d="M210.14285714285717 120.88266480000003 h32.857142857142854 v27.970666200000004 h-32.857142857142854 Z"
-                                      fill="rgba(253,253,253,0.6)" stroke-width="0" fill-rule="evenodd"
-                                      stroke="rgba(253,253,253,0.6)" display="block"></path>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(1,30.970666)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">7일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(1,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">14일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(1,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">21일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(1,120.882665)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">28일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(35.857143,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">1일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(35.857143,30.970666)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">8일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(35.857143,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">15일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(35.857143,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">22일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(35.857143,120.882665)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">29일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(70.714286,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">2일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(70.714286,30.970666)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">9일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(70.714286,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">16일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(70.714286,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">23일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(70.714286,120.882665)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">30일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(105.571429,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">3일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(105.571429,30.970666)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">10일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(105.571429,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">17일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(105.571429,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">24일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(105.571429,120.882665)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">31일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(140.428571,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">4일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(140.428571,30.970666)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">11일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(140.428571,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">18일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(140.428571,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">25일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(175.285714,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">5일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(175.285714,30.970666)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">12일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(175.285714,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">19일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(175.285714,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">26일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(210.142857,1)" display="block"><text
-                                        transform="translate(6.608259,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">6일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(210.142857,30.970666)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">13일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(24,64,5)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(210.142857,60.941332)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">20일</tspan>
-                                      </text></g>
-                                    <g fill="rgb(77,77,77)" font-family="tahoma, geneva, sans-serif" font-size="12px"
-                                      transform="translate(210.142857,90.911999)" display="block"><text
-                                        transform="translate(2.787947,6.745333)">
-                                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="center"
-                                          yAlignment="middle" style="white-space: pre">27일</tspan>
-                                      </text></g>
-                                  </g>
-                                  <g></g>
-                                  <g>
-                                    <g></g>
-                                    <path fill="none" stroke="#DEDEAC" stroke-opacity="0.9"
-                                      stroke-width="3.5999999999999996" stroke-linejoin="round" stroke-linecap="butt"
-                                      fill-rule="evenodd" d="M0 0" pointer-events="none" clip-path="url(#_jsc348)">
-                                    </path>
-                                    <path fill="none" stroke="#DEDEAC" stroke-opacity="0.36000000000000004"
-                                      stroke-width="6" stroke-linejoin="round" stroke-linecap="butt" fill-rule="evenodd"
-                                      d="M0 0" pointer-events="none" clip-path="url(#_jsc351)"></path>
-                                  </g>
-                                </g>
-                                <g></g>
-                                <g></g>
-                                <path fill="none" d="M-1 -0.8733349999999973 h246 v152 h-246 Z"></path>
-                              </g>
-                            </g>
-                            <g transform="translate(0,167.333332)">
-                              <g></g>
-                            </g>
-                            <g transform="translate(244,167.333332)">
-                              <g></g>
-                            </g>
-                            <g>
-                              <g>
-                                <g>
-                                  <g>
-                                    <g>
-                                      <g display="none">
-                                        <rect fill="transparent" y="-0.3933339999999994" rx="0" ry="0"></rect>
-                                        <g></g>
-                                      </g>
-                                    </g>
-                                    <g>
-                                      <g transform="translate(8.428571,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M -0.4285709999999998 4.606666000000001 L -0.4285709999999998 -0.3933339999999994 L 4.571429 -0.3933339999999994 L 12.571429000000002 -0.3933339999999994 L 17.571429000000002 -0.3933339999999994 L 17.571429000000002 4.606666000000001 L 17.571429000000002 15.606666000000004 L 17.571429000000002 20.606666000000004 L 12.571429000000002 20.606666000000004 L 4.571429 20.606666000000004 L -0.4285709999999998 20.606666000000004 L -0.4285709999999998 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">일</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(43.285714,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M -0.2857139999999987 4.606666000000001 L -0.2857139999999987 -0.3933339999999994 L 4.714286000000001 -0.3933339999999994 L 12.714286000000001 -0.3933339999999994 L 17.714286 -0.3933339999999994 L 17.714286 4.606666000000001 L 17.714286 15.606666000000004 L 17.714286 20.606666000000004 L 12.714286000000001 20.606666000000004 L 4.714286000000001 20.606666000000004 L -0.2857139999999987 20.606666000000004 L -0.2857139999999987 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">월</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(78.142857,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M -0.14285700000000645 4.606666000000001 L -0.14285700000000645 -0.3933339999999994 L 4.8571429999999935 -0.3933339999999994 L 12.857142999999994 -0.3933339999999994 L 17.857142999999994 -0.3933339999999994 L 17.857142999999994 4.606666000000001 L 17.857142999999994 15.606666000000004 L 17.857142999999994 20.606666000000004 L 12.857142999999994 20.606666000000004 L 4.8571429999999935 20.606666000000004 L -0.14285700000000645 20.606666000000004 L -0.14285700000000645 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">화</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(113,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M 0 4.606666000000001 L 0 -0.3933339999999994 L 5 -0.3933339999999994 L 13 -0.3933339999999994 L 18 -0.3933339999999994 L 18 4.606666000000001 L 18 15.606666000000004 L 18 20.606666000000004 L 13 20.606666000000004 L 5 20.606666000000004 L 0 20.606666000000004 L 0 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">수</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(147.857143,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M 0.14285699999999224 4.606666000000001 L 0.14285699999999224 -0.3933339999999994 L 5.142856999999992 -0.3933339999999994 L 13.142856999999992 -0.3933339999999994 L 18.142856999999992 -0.3933339999999994 L 18.142856999999992 4.606666000000001 L 18.142856999999992 15.606666000000004 L 18.142856999999992 20.606666000000004 L 13.142856999999992 20.606666000000004 L 5.142856999999992 20.606666000000004 L 0.14285699999999224 20.606666000000004 L 0.14285699999999224 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">목</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(182.714286,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M 0.2857140000000129 4.606666000000001 L 0.2857140000000129 -0.3933339999999994 L 5.285714000000013 -0.3933339999999994 L 13.285714000000013 -0.3933339999999994 L 18.285714000000013 -0.3933339999999994 L 18.285714000000013 4.606666000000001 L 18.285714000000013 15.606666000000004 L 18.285714000000013 20.606666000000004 L 13.285714000000013 20.606666000000004 L 5.285714000000013 20.606666000000004 L 0.2857140000000129 20.606666000000004 L 0.2857140000000129 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">금</tspan>
-                                          </text></g>
-                                      </g>
-                                      <g transform="translate(217.571429,-3)">
-                                        <path stroke-linejoin="round" stroke-linecap="butt" stroke-width="0"
-                                          fill="transparent"
-                                          d="M 0.42857100000000514 4.606666000000001 L 0.42857100000000514 -0.3933339999999994 L 5.428571000000005 -0.3933339999999994 L 13.428571000000005 -0.3933339999999994 L 18.428571000000005 -0.3933339999999994 L 18.428571000000005 4.606666000000001 L 18.428571000000005 15.606666000000004 L 18.428571000000005 20.606666000000004 L 13.428571000000005 20.606666000000004 L 5.428571000000005 20.606666000000004 L 0.42857100000000514 20.606666000000004 L 0.42857100000000514 15.606666000000004 Z">
-                                        </path>
-                                        <g cursor="default" fill="#5f5f5f" font-size="12px" transform="translate(3,3)">
-                                          <text>
-                                            <tspan x="0px" y="11.48746641438799" style="white-space: pre">토</tspan>
-                                          </text></g>
-                                      </g>
-                                      <path fill="none" stroke-width="0" stroke-linejoin="round" stroke-linecap="butt"
-                                        d="M0 17.606666000000004 L 244 17.606666000000004"></path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M17.5 17.106666000000004 L 17.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M52.5 17.106666000000004 L 52.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M87.5 17.106666000000004 L 87.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M122.5 17.106666000000004 L 122.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M156.5 17.106666000000004 L 156.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M191.5 17.106666000000004 L 191.5 17.106666000000004">
-                                      </path>
-                                      <path fill="none" stroke="#E2E2E2" stroke-opacity="1" stroke-linejoin="round"
-                                        stroke-linecap="butt" d="M226.5 17.106666000000004 L 226.5 17.106666000000004">
-                                      </path>
-                                      <g></g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                            <g transform="translate(0,17.480001)">
-                              <g>
-                                <g></g>
-                              </g>
-                            </g>
-                            <g transform="translate(244,17.480001)">
-                              <g>
-                                <g></g>
-                              </g>
-                            </g>
-                            <g transform="translate(0,167.333332)">
-                              <g>
-                                <g></g>
-                              </g>
-                            </g>
-                          </g>
-                          <g transform="translate(244,0)">
-                            <g></g>
-                          </g>
-                        </g>
-                        <g transform="translate(0,195.726666)">
-                          <g></g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                  <g>
-                    <g transform="translate(36.958124999999995,195.726666)">
-                      <path stroke-width="0" fill="transparent"
-                        d="M 0.04187500000000455 5.2733340000000055 L 5.0418750000000045 0.2733340000000055 L 165.041875 0.2733340000000055 L 170.041875 0.2733340000000055 L 170.041875 5.2733340000000055 L 170.041875 23.273334 L 165.041875 28.273334 L 5.0418750000000045 28.273334 L 0.04187500000000455 28.273334 L 0.04187500000000455 23.273334 Z">
-                      </path>
-                      <g transform="translate(2.5,2.5)">
-                        <g display="none">
-                          <rect fill="transparent" x="-0.45812499999999545" y="-0.22666599999999448" rx="0" ry="0">
-                          </rect>
-                          <g></g>
-                        </g>
-                        <g>
-                          <g transform="translate(2.5,2.5)">
-                            <g transform="translate(2.5,4.136667)">
-                              <path
-                                d="M 0 2 A 2 2 0 0 1 1.9980000003333322 9.999999166510065e-7 L 18 0 A 2 2 0 0 1 19.999999000000084 1.9980000003333334 L 20 8 A 2 2 0 0 1 18.001999999666666 9.999999000000084 L 2 10 A 2 2 0 0 1 9.999999166510065e-7 8.001999999666667 Z"
-                                fill="rgba(255,255,0,1)"
-                                transform="translate(0.04187500000000455,-0.36333299999998303)" stroke="#F1F1F1"
-                                stroke-opacity="1" stroke-linejoin="round" stroke-linecap="butt" fill-rule="evenodd">
-                              </path>
-                            </g>
-                          </g>
-                          <g fill="#323232" font-size="11px" font-weight="bold" transform="translate(27.5,2.5)">
-                            <g transform="translate(2.5,2.5)"><text>
-                                <tspan x="0px" y="10.530177546522324" style="white-space: pre">성공!!</tspan>
-                              </text></g>
-                          </g>
-                          <g transform="translate(62.041875,2.5)">
-                            <g transform="translate(2.5,2.5)"></g>
-                          </g>
-                          <g transform="translate(70.041875,2.5)">
-                            <g transform="translate(2.5,4.136667)">
-                              <path
-                                d="M 0 2 A 2 2 0 0 1 1.9980000003333322 9.999999166510065e-7 L 18 0 A 2 2 0 0 1 19.999999000000084 1.9980000003333334 L 20 8 A 2 2 0 0 1 18.001999999666666 9.999999000000084 L 2 10 A 2 2 0 0 1 9.999999166510065e-7 8.001999999666667 Z"
-                                fill="url(#_jsc34)" transform="translate(0.5,-0.36333299999998303)" stroke="#F1F1F1"
-                                stroke-opacity="1" stroke-linejoin="round" stroke-linecap="butt" fill-rule="evenodd">
-                              </path>
-                            </g>
-                          </g>
-                          <g fill="#323232" font-size="11px" font-weight="bold" transform="translate(95.041875,2.5)">
-                            <g transform="translate(2.5,2.5)"><text>
-                                <tspan x="0px" y="10.530177546522324" style="white-space: pre">반성하세요!!</tspan>
-                              </text></g>
-                          </g>
-                        </g>
-                        <g font-size="5" display="none">
-                          <g transform="translate(5,0)"><text>
-                              <tspan x="0px" y="4.7864443393283285" style="white-space: pre"> </tspan>
-                            </text>
-                            <g transform="translate(0,2.516667)">
-                              <path d="M 0 0 L 10 0" stroke="darkgray" fill="none" height="1"></path>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-                <g></g>
-                <g>
-                  <g pointer-events="none" transform="translate(181.7297,48.8733)" display="none" opacity="0">
-                    <g>
-                      <path fill="rgba(0,0,0,.025)" transform="translate(5,5)" stroke-opacity="1"
-                        stroke-linejoin="round" stroke-linecap="butt" pointer-events="none"
-                        d="M 0.7703229999999905 2.6266650000000027 A 2 2 0 0 1 2.768323000333323 0.6266659999999193 L 65.770323 0.6266650000000027 A 2 2 0 0 1 67.77032200000009 2.624665000333336 L 67.770323 53.626665 A 2 2 0 0 1 65.77232299966667 55.62666400000008 L 2.7703229999999905 55.626665 A 2 2 0 0 1 0.7703239999999072 53.62866499966667 Z">
-                      </path>
-                      <path fill="rgba(0,0,0,0.05)" transform="translate(2.5,2.5)" stroke-opacity="1"
-                        stroke-linejoin="round" stroke-linecap="butt" pointer-events="none"
-                        d="M 0.7703229999999905 2.6266650000000027 A 2 2 0 0 1 2.768323000333323 0.6266659999999193 L 65.770323 0.6266650000000027 A 2 2 0 0 1 67.77032200000009 2.624665000333336 L 67.770323 53.626665 A 2 2 0 0 1 65.77232299966667 55.62666400000008 L 2.7703229999999905 55.626665 A 2 2 0 0 1 0.7703239999999072 53.62866499966667 Z">
-                      </path>
-                    </g>
-                    <path stroke-opacity="1" stroke-linejoin="round" stroke-linecap="butt" pointer-events="none"
-                      stroke="#BFE3AC" fill="url(#_jsc366)"
-                      d="M 0.7703229999999905 2.6266650000000027 A 2 2 0 0 1 2.768323000333323 0.6266659999999193 L 65.770323 0.6266650000000027 A 2 2 0 0 1 67.77032200000009 2.624665000333336 L 67.770323 53.626665 A 2 2 0 0 1 65.77232299966667 55.62666400000008 L 2.7703229999999905 55.626665 A 2 2 0 0 1 0.7703239999999072 53.62866499966667 Z">
-                    </path>
-                    <g transform="translate(6.585786,6.585786)"><text>
-                        <tspan x="0px" y="11.48746641438799" style="white-space: pre">1/20/2018</tspan>
-                      </text>
-                      <g transform="translate(0,14.480001)"><text>
-                          <tspan x="0px" y="11.48746641438799" style="white-space: pre"> </tspan>
-                        </text>
-                        <g transform="translate(0,6.740001)">
-                          <path d="M0.18453699999997752 0.32087699999999586L55.184536999999985 0.32087699999999586"
-                            stroke="darkgray" fill="none" width="55.09875" height="1"></path>
-                        </g>
-                      </g><text transform="translate(0,28.960002)">
-                        <tspan x="0px" y="11.48746641438799" font-weight="bold" xAlignment="left">Available</tspan>
-                      </text>
-                    </g>
-                  </g>
-                  <rect cursor="default" fill="rgba(255,255,255,0)" x="45.458124999999995" y="204.226666"
-                    width="58.541875000000005" height="17.273334000000006"></rect>
-                  <rect cursor="default" fill="rgba(255,255,255,0)" x="113" y="204.226666" width="91.541875"
-                    height="17.273334000000006"></rect>
-                </g>
-                <g cursor="pointer" transform="translate(4,229)">
-                  <g>
-                    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="8.4" x2="8.4" y1="16.327" y2="1.765">
-                      <stop offset="0" stop-color="#4a4949"></stop>
-                      <stop offset="1" stop-color="#666565"></stop>
-                    </linearGradient>
-                    <linearGradient id="b">
-                      <stop offset="0" stop-color="#0d48a1"></stop>
-                      <stop offset="1" stop-color="#20ade2"></stop>
-                    </linearGradient>
-                    <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="24.226" x2="24.226" xlink:href="#b"
-                      y1="16.343" y2="4.618"></linearGradient>
-                    <filter id="d" width="120%" height="120%" x="-10%" y="-10%">
-                      <feColorMatrix type="saturate" values="0"></feColorMatrix>
-                    </filter>
+        <div class="calendar"></div>
+        <div class="sec_cal" style="max-width: 233px; margin: 0px auto;">
+          <div class="cal_nav">
+            <a href="javascript:;" class="nav-btn go-prev">prev</a>
+            <div class="year-month"></div>
+            <a href="javascript:;" class="nav-btn go-next">next</a>
+          </div>
 
-                  </g>
-                  <title>Chart created using JSCharting</title>
-                </g>
-              </g>
-            </svg>
-            <div id="_jsc_overlay0" style="position: absolute; left: 0px; top: 0px;"></div>
-            <div style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;">
-              <div
-                style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                <div
-                  style="position: absolute; left: 0px; top: 0px; transition: all 0s ease 0s; width: 100000px; height: 100000px;">
-                </div>
-              </div>
-              <div
-                style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;">
-                <div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div>
-              </div>
+          <div class="cal_wrap">
+            <div class="days">
+              <div class="day">MON</div>
+              <div class="day">TUE</div>
+              <div class="day">WED</div>
+              <div class="day">THU</div>
+              <div class="day">FRI</div>
+              <div class="day">SAT</div>
+              <div class="day">SUN</div>
             </div>
-            <div class="loader default hide" style="width: 250px; height: 250px; animation-delay: 0ms;">
-              <div class="loader-overlay" style="background-color: rgb(255, 255, 255);"></div>
-              <div class="loader-icon-holder">
-                <div class="loader-icon">
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                  <div class="inner"></div>
-                </div>
-                <div class="loader-text"></div>
-              </div>
-            </div>
-
-            <div
-              style="padding: 12px; background-color: rgb(238, 238, 238); border-radius: 16px; position: absolute; display: none; text-align: left; max-width: 400px; z-index: 999; font-family: tahoma, geneva, sans-serif; font-size: 12px; font-weight: normal; font-style: normal; right: 26px; bottom: 26px;">
-              <div style="max-height: 200px; overflow-y: auto;">
-                <div style="pointer-events: none;">
-                  <h4 style="margin-top: 0px; margin-bottom: 4px; color: rgb(204, 153, 0);">Adding &lt;script&gt;
-                    improves
-                    performance</h4>
-                  <p style="margin-top: 0px; margin-bottom: 4px;">Adding: &lt;script type="text/javascript"
-                    src="https://code.jscharting.com/latest/modules/types.js"&gt;&lt;/script&gt; to the HTML page will
-                    improve
-                    performace</p>
-                  <p style="margin-bottom: 4px; color: gray;">To disable these messages, remove or set chart debug
-                    option to
-                    false</p>
-                </div>
-              </div>
-            </div>
+            <div class="dates" style="max-height: 250px;"></div>
           </div>
         </div>
 
@@ -822,9 +105,6 @@
 
 
       <div id="target_box" class="box_shadow">
-        <!-- <div class="profile_box" style="background: #BDBDBD;">
-                    <img class="profile" src="./images/profile.jpg">
-                </div> -->
 
 
         <div class="target_money_text">
@@ -834,7 +114,7 @@
         <input type="text" class="input_target_money target_margin" id="" value="${mvo.challenge_total}" disabled="">
         <input type="text" class="input_now_money target_margin" id="" value="${sum}" disabled="">
         <div class="col-12">
-        <form action="${cpath}/challenge.do">
+        <form action="${cpath}/challenge.do" class="sun">
                 <input type="hidden" name="mb_id" value="${mvo.mb_id}"/>
                 <input type="hidden" name="aaa" value="aaa"/>
           <select name="priority" class="target_margin" id="category">
@@ -851,7 +131,7 @@
         </div>
         <ul class="actions fit">
 
-          <li><button type="submit" class="button fit" onclick="over()">저장</button></li>
+          <li><button type="submit" class="btn_1" onclick="over()">저장</button></li>
 
         </ul>
         </form>
@@ -859,8 +139,14 @@
 		function over(){
 			if(${mvo.challenge_total < sum}){
 				alert("으이구~~돈 좀 아껴써라~🤦‍🤦‍♂️🤦💸💸💸💸💸")
+				event.preventDefault();
 			}
-		}</script>
+		}
+		
+	
+		
+		
+		</script>
 
 
 
@@ -877,14 +163,8 @@
           </div>
 
           <div class="area_chart_div card-body">
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-expand">
-                <div class=""></div>
-              </div>
-
-            </div>
-            <canvas class="item chartjs-render-monitor" id="myAreaChart" width="1210" height="362"
-              style="display: block; height: 100px; width: 968px;"></canvas>
+           
+            <canvas class="chartjs-render-monitor" id="myAreaChart" width="641" height="220" style="display: block; height: 189px; width: 641px;"></canvas>
           </div>
 
         </div>
@@ -908,7 +188,7 @@
               class="ex1 chartjs-render-monitor"></canvas>
             <div class="chartjs-size-monitor">
               <div class=" chartjs-size-monitor-expand">
-                <div class=""></div>
+                
               </div>
               <div class="chartjs-size-monitor-shrink">
                 <div class=""></div>
@@ -936,9 +216,7 @@
             </div>
           </div>
         </div> 
-        <!-- <div class="div_ex" style="border: solid 1px black;">
-          무엇을 넣을까요?
-        </div> -->
+        
       </div>
       
         
@@ -953,23 +231,23 @@
 
   </div>
   <div>
-        <img src="img/배경.png" style="position: absolute;width: 90%;top:161%;left: 5%; height: 70%;"/>
-        <img src="img/카드추천.png" style="position: absolute;width: 25%;top:165%;left: 36% ;">
-        <img src="img/영역.png" style="position: absolute;width: 40%;top:161%;left: 4%;"/>
-        <img src="img/영역.png" style="position: absolute;width: 40%;top:161%;left: 56.8%;"/>
-        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:175%;left: 8%;"/>
-        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:175%;left: 61%;"/>
-        <img src="img/카드추천_그림.png" style="position: absolute;width: 14%;top:186%;left: 42%;"/>
-        <img src="img/오하쳌(오늘하루체크)(우리카드) (2).jpg" style="border-radius: 7px; position: absolute;width: 17%;top:166%;left: 19%;box-shadow: 5px 5px 10px;color:gray;"/>
-        <img src="img/haebom.jpg" style="border-radius: 7px; position: absolute;width: 17%;top:166%;left: 72%;box-shadow: 5px 5px 10px;color:gray;"/>
-        <h4 style="position: absolute;left: 10%; top:194%">오늘하루 체크카드</h4>
+        <img src="img/배경.png" style="position: absolute;width: 90%;top:171%;left: 5%; height: 70%;"/>
+        <img src="img/카드추천.png" style="position: absolute;width: 25%;top:175%;left: 36% ;">
+        <img src="img/영역.png" style="position: absolute;width: 40%;top:171%;left: 4%;"/>
+        <img src="img/영역.png" style="position: absolute;width: 40%;top:171%;left: 56.8%;"/>
+        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:185%;left: 8%;"/>
+        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:185%;left: 61%;"/>
+        <img src="img/카드추천_그림.png" style="position: absolute;width: 14%;top:196%;left: 42%;"/>
+        <img src="img/오하쳌(오늘하루체크)(우리카드) (2).jpg" style="border-radius: 7px; position: absolute;width: 17%;top:176%;left: 19%;box-shadow: 5px 5px 10px;color:gray;"/>
+        <img src="img/haebom.jpg" style="border-radius: 7px; position: absolute;width: 17%;top:176%;left: 72%;box-shadow: 5px 5px 10px;color:gray;"/>
+        <h4 style="position: absolute;left: 10%; top:204%">오늘하루 체크카드</h4>
         
-        <p style="position: absolute;left: 11%; top:201%">- [EAT] 커피 5% 캐시백<br>- [EAT] 배달/주문 5% 캐시백</p>
-        <a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 30%; top:211%">자세히보기</a>
+        <p style="position: absolute;left: 11%; top:211%">- [EAT] 커피 5% 캐시백<br>- [EAT] 배달/주문 5% 캐시백</p>
+        <a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 30%; top:221%">자세히보기</a>
 
-        <h4 style="position: absolute;left: 63%; top:194%">노리 체크카드</h4>
-        <p style="position: absolute;left: 64%; top:201%">- 커피 20% 할인<br>- 배달앱 5% 할인<br>- 온라인 쇼핑 5% 할인</p>
-      </div><a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 83%; top:211%">자세히보기</a>
+        <h4 style="position: absolute;left: 63%; top:204%">노리 체크카드</h4>
+        <p style="position: absolute;left: 64%; top:211%">- 커피 20% 할인<br>- 배달앱 5% 할인<br>- 온라인 쇼핑 5% 할인</p>
+      </div><a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 83%; top:221%">자세히보기</a>
   </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
   <footer id="footer">
     <ul class="copyright">
@@ -978,129 +256,101 @@
     </ul>
   </footer>
   <script type="text/javascript">
+  $(document).ready(function () {
+      calendarInit();
+    });
     /*
-Calendar with blackout dates loaded from a CSV file.
-Learn how to:
- 
-- Use CSV data with calendars.
-*/
-    // JS
-    var chart,
-      chartConfig = {
-        debug: true,
-        //Without data, a view must be specified.
-        type: 'calendar month solid',
-        title_label_text: '무지출 달성표',
-        yAxis_visible: false,
-        legend: {
-          //Add custom entries
-          template: '%icon %name',
-          position: 'bottom',
-          customEntries: [
-            { name: '성공!!', icon_color: '#cbf2b7' },
-            {
-              name: '반성하세요!!',
-              icon: {
-                hatch: {
-                  style: 'light-upward-diagonal',
-                  color: '#a2a2a2'
-                }
-              }
-            }
-          ]
-        },
-        calendar: {
-          range: ['1/1/2018', '1/31/2018'],
-          defaultEdgePoint: { mouseTracking: false, label_visible: false }
-        },
-        defaultSeries: {
-          opacity: 0.6,
-          legendEntry_visible: false,
-          defaultPoint: {
-            outline_width: 0,
-            label_text: '<b>%name</b>'
-          }
-        },
-        toolbar_visible: false
-      };
+        달력 렌더링 할 때 필요한 정보 목록 
+    
+        현재 월(초기값 : 현재 시간)
+        금월 마지막일 날짜와 요일
+        전월 마지막일 날짜와 요일
+    */
 
-    loadData(makeChart);
+    function calendarInit() {
 
-    function loadData(cb) {
-      JSC.fetch('./bookingData.csv')
-        .then(function (response) {
-          return response.text();
-        })
-        .then(function (csv) {
-          cb(JSC.parseCsv(csv).data);
-        })
-        .catch(function (ex) {
-          console.error(ex);
-        });
-    }
+      // 날짜 정보 가져오기
+      var date = new Date(); // 현재 날짜(로컬 기준) 가져오기
+      var utc = date.getTime() + (date.getTimezoneOffset() * 60 * 1000); // uct 표준시 도출
+      var kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
+      var today = new Date(utc + kstGap); // 한국 시간으로 date 객체 만들기(오늘)
 
-    function makeChart(data) {
-      chartConfig.series = [
-        {
-          points: data.map(function (row) {
-            var isAvailable = row[1] === 'a';
-            return isAvailable
-              ? {
-                date: row[0],
-                color: '#cbf2b7',
-                tooltip: '{%date:date d}<hr><b>Available</b>'
-              }
-              : {
-                date: row[0],
-                tooltip: '{%date:date d}<hr><b>Booked</b>',
-                hatch: {
-                  style: 'light-upward-diagonal',
-                  color: '#a2a2a2'
-                }
-              };
-          })
+      var thisMonth = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      // 달력에서 표기하는 날짜 객체
+
+
+      var currentYear = thisMonth.getFullYear(); // 달력에서 표기하는 연
+      var currentMonth = thisMonth.getMonth(); // 달력에서 표기하는 월
+      var currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
+
+      // kst 기준 현재시간
+      // console.log(thisMonth);
+
+      // 캘린더 렌더링
+      renderCalender(thisMonth);
+
+      function renderCalender(thisMonth) {
+
+        // 렌더링을 위한 데이터 정리
+        currentYear = thisMonth.getFullYear();
+        currentMonth = thisMonth.getMonth();
+        currentDate = thisMonth.getDate();
+
+        // 이전 달의 마지막 날 날짜와 요일 구하기
+        var startDay = new Date(currentYear, currentMonth, 0);
+        var prevDate = startDay.getDate();
+        var prevDay = startDay.getDay();
+
+        // 이번 달의 마지막날 날짜와 요일 구하기
+        var endDay = new Date(currentYear, currentMonth + 1, 0);
+        var nextDate = endDay.getDate();
+        var nextDay = endDay.getDay();
+
+        // console.log(prevDate, prevDay, nextDate, nextDay);
+
+        // 현재 월 표기
+        $('.year-month').text(currentYear + '.' + (currentMonth + 1));
+
+        // 렌더링 html 요소 생성
+        calendar = document.querySelector('.dates')
+        calendar.innerHTML = '';
+
+        // 지난달
+        for (var i = prevDate - prevDay + 1; i <= prevDate; i++) {
+          calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
         }
-      ];
-      chart = JSC.chart('chartDiv', chartConfig);
-    }
-  </script>
-  <!-- Code injected by live-server -->
-  <script type="text/javascript">
-    // <![CDATA[  <-- For SVG support
-    if ('WebSocket' in window) {
-      (function () {
-        function refreshCSS() {
-          var sheets = [].slice.call(document.getElementsByTagName("link"));
-          var head = document.getElementsByTagName("head")[0];
-          for (var i = 0; i < sheets.length; ++i) {
-            var elem = sheets[i];
-            var parent = elem.parentElement || head;
-            parent.removeChild(elem);
-            var rel = elem.rel;
-            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-            }
-            parent.appendChild(elem);
-          }
+        // 이번달
+        for (var i = 1; i <= nextDate; i++) {
+          calendar.innerHTML = calendar.innerHTML + '<div class="day current"' + ' id="' + i + '">' + i + '</div>'
         }
-        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-        var address = protocol + window.location.host + window.location.pathname + '/ws';
-        var socket = new WebSocket(address);
-        socket.onmessage = function (msg) {
-          if (msg.data == 'reload') window.location.reload();
-          else if (msg.data == 'refreshcss') refreshCSS();
-        };
-        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-          console.log('Live reload enabled.');
-          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+        // 다음달
+        for (var i = 1; i <= (7 - nextDay == 7 ? 0 : 7 - nextDay); i++) {
+          calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
         }
-      })();
+
+        // 오늘 날짜 표기
+        if (today.getMonth() == currentMonth) {
+          todayDate = today.getDate();
+          var currentMonthDate = document.querySelectorAll('.dates .current');
+          currentMonthDate[todayDate - 1].classList.add('today');
+        }
+      }
+
+      // 이전달로 이동
+      $('.go-prev').on('click', function () {
+        thisMonth = new Date(currentYear, currentMonth - 1, 1);
+        renderCalender(thisMonth);
+      });
+
+      // 다음달로 이동
+      $('.go-next').on('click', function () {
+        thisMonth = new Date(currentYear, currentMonth + 1, 1);
+        renderCalender(thisMonth);
+      });
+      // let date = today.getDate();
     }
-    else {
-      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-    }
-    // ]]>
+    
+    
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
@@ -1221,6 +471,24 @@ Learn how to:
 	          backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745', '#00000'],
 	        }],
 	      },
+	      options: {
+	    	    title: {
+	    	      display: true,
+	    	      text: "chart"
+	    	    },
+	    	    legend: {
+	    	      usePointStyle: true,
+	    	      position: 'bottom',
+	    	      align: 'center',
+	    	      labels: {
+	    	        fontSize: 10,
+	    	        boxWidth: 20
+
+
+	    	      }
+
+	    	    }
+	    	  },
 	    });
 		console.log(${sumItemPay[1]});
     </script>
@@ -1238,14 +506,23 @@ Learn how to:
         labels: ["쇼핑", "식비", "여가", "교통", "기타"],
       },
       options: {
-        plugins: {
-          datalabels: {
-            formatter: (value) => {
-              return value + '%';
-            }
-          }
-        }
-      }
+    	    title: {
+    	      display: true,
+    	      //text: "chart"
+    	    },
+    	    legend: {
+    	      usePointStyle: true,
+    	      position: 'bottom',
+    	      align: 'center',
+    	      labels: {
+    	        fontSize: 10,
+    	        boxWidth: 20
+
+
+    	      }
+
+    	    }
+    	  },
     });
 
     </script>
@@ -1255,9 +532,12 @@ Learn how to:
 
   <style>
 
-
+	.form{
+		margin: 0 0 0 0 !important;
+	}
     .target_money_text {
       position: relative;
+      margin: 0 0 15 0;
 
     }
 
@@ -1268,7 +548,7 @@ Learn how to:
 
     .input_target_money {
       position: relative;
-
+	  margin: 0 0 0 0 !important;
 
     }
 
@@ -1277,31 +557,31 @@ Learn how to:
     }
 
     .area_chart_div {
-      width: 1000px;
-      height: 210px;
+      width: 600px;
+      height: 230px;
     }
 
     .main_bottom_div {
       margin-top: 50px;
-      height: 250px;
-      width: 592px;
+      height: 340px;
+      width: 600px;
       
       display: flex;
       justify-content: space-between;
     }
 
     .div_ex {
-      width: 260px;
-      height: 250px;
+      width: 282px;
+      height: 275px;
       
     }
 
     .ex1 {
       position: absolute;
-        width: 360px !important;
-        height: 180px !important;
-        left: -25px;
-        bottom: 10px;
+        width: 420px !important;
+        height: 210px !important;
+        left: -34px;
+        bottom: 20px;
     }
 
     hr {
@@ -1321,6 +601,125 @@ Learn how to:
 .target_box .target_margin{
   margin-top: 10px !important;
 }
+.day1{
+      background-color: #ed2a61;
+    }
+    .sec_cal {
+      width: 360px;
+      margin: 0 auto;
+      
+    }
+  
+    .sec_cal .cal_nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 78px;
+    }
+  
+    .sec_cal .cal_nav .year-month {
+      width: 125px;
+      font-size: xx-large;
+      text-align: center;
+      line-height: 1;
+    }
+  
+    .sec_cal .cal_nav .nav {
+      display: flex;
+      border: 1px solid #333333;
+      border-radius: 5px;
+    }
+  
+    .sec_cal .cal_nav .go-prev,
+    .sec_cal .cal_nav .go-next {
+      display: block;
+      width: 23px;
+      height: 49px;
+      font-size: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .sec_cal .cal_nav .go-prev::before,
+    .sec_cal .cal_nav .go-next::before {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #000;
+      border-width: 3px 3px 0 0;
+      transition: border 0.1s;
+    }
+  
+    .sec_cal .cal_nav .go-prev:hover::before,
+    .sec_cal .cal_nav .go-next:hover::before {
+      border-color: #ed2a61;
+    }
+  
+    .sec_cal .cal_nav .go-prev::before {
+      transform: rotate(-135deg);
+    }
+  
+    .sec_cal .cal_nav .go-next::before {
+      transform: rotate(45deg);
+    }
+  
+    .sec_cal .cal_wrap {
+      padding-top: 5px;
+      position: relative;
+      margin: 0px auto;
+    }
+  
+    .sec_cal .cal_wrap .days {
+      display: flex;
+      margin-bottom: 13px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .sec_cal .cal_wrap::after {
+      top: 368px;
+    }
+  
+    .sec_cal .cal_wrap .day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% / 7);
+      text-align: left;
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 5px
+    }
+  
+    .current.today {
+      background: rgb(242 242 242);
+    }
+  
+    .sec_cal .cal_wrap .dates {
+      display: flex;
+      flex-flow: wrap;
+      height: 167px;
+    }
+  
+    .sec_cal .cal_wrap .day:nth-child(7n -1) {
+      color: #3c6ffa;
+    }
+  
+    .sec_cal .cal_wrap .day:nth-child(7n) {
+      color: #ed2a61;
+    }
+  
+    .sec_cal .cal_wrap .day.disable {
+      color: #ddd;
+    }
+	.sun{
+		margin: 0 0 0 0;
+	}
   
   </style>
 
