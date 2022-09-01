@@ -8,6 +8,17 @@
 <%
 pageContext.setAttribute("newLineChar", "\n");
 %>
+<script src="//code.jquery.com/jquery.min.js"></script>
+        <style>
+            #btn_like{
+                background-color: #C5DFFF;
+                border-radius: 20%;
+                border: 1px;
+            }
+            .likebox{
+                margin-left: 92%;
+            }
+        </style>
 <!DOCTYPE HTML>
 <!--
     Alpha by HTML5 UP
@@ -74,6 +85,16 @@ pageContext.setAttribute("newLineChar", "\n");
 				</c:if>
 				</c:if>
 				<br/>
+				<!--좋아요-->
+            <div class='likebox'>
+            <button class="like_btn" id="btn_like">🧡<h4 id="countLike">0</h4></button>
+        <script>
+            let like = document.getElementById('countLike');
+            $(".like_btn").click(function() {
+                    like.innerText++;
+            })
+            </script>
+            </div>
 				<!--코멘트창-->
 				<form class="comm_comment" action="${cpath}/commWrite.do"method="get">
 				<!-- boardview로 가기 위한 파라미터 -->

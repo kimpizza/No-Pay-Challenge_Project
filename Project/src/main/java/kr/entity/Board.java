@@ -9,19 +9,11 @@ public class Board {
 	private String mb_name; // 작성자
 	private int comm_cnt; // 조회수
 	private String filename;
+	private int count; // 댓글 개수
 	
-	public String getFilename() {
-		return filename;
-	}
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-
-	public Board() { // 디폴트 생성자
-	}
-
-	public Board(int comm_seq, String comm_title, String comm_content, String comm_date, String mb_id, String mb_name, int comm_cnt,String filename) {
+	
+	public Board(int comm_seq, String comm_title, String comm_content, String comm_date, String mb_id, String mb_name,
+			int comm_cnt, String filename, int count) {
 		super();
 		this.comm_seq = comm_seq;
 		this.comm_title = comm_title;
@@ -30,72 +22,73 @@ public class Board {
 		this.mb_id = mb_id;
 		this.mb_name = mb_name;
 		this.comm_cnt = comm_cnt;
+		this.filename = filename;
+		this.count = count;
 	}
-
+	public Board() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getComm_seq() {
 		return comm_seq;
 	}
-
 	public void setComm_seq(int comm_seq) {
 		this.comm_seq = comm_seq;
 	}
-
 	public String getComm_title() {
 		return comm_title;
 	}
-
 	public void setComm_title(String comm_title) {
 		this.comm_title = comm_title;
 	}
-
 	public String getComm_content() {
 		return comm_content;
 	}
-
 	public void setComm_content(String comm_content) {
 		this.comm_content = comm_content;
 	}
-
 	public String getComm_date() {
 		return comm_date;
 	}
-
 	public void setComm_date(String comm_date) {
 		this.comm_date = comm_date;
 	}
-
 	public String getMb_id() {
 		return mb_id;
 	}
-
 	public void setMb_id(String mb_id) {
 		this.mb_id = mb_id;
 	}
 	public String getMb_name() {
 		return mb_name;
 	}
-	
 	public void setMb_name(String mb_name) {
 		this.mb_name = mb_name;
 	}
-
 	public int getComm_cnt() {
 		return comm_cnt;
 	}
-
 	public void setComm_cnt(int comm_cnt) {
 		this.comm_cnt = comm_cnt;
 	}
-
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	@Override
 	public String toString() {
 		return "Board [comm_seq=" + comm_seq + ", comm_title=" + comm_title + ", comm_content=" + comm_content
 				+ ", comm_date=" + comm_date + ", mb_id=" + mb_id + ", mb_name=" + mb_name + ", comm_cnt=" + comm_cnt
-				+ ", filename=" + filename + "]";
+				+ ", filename=" + filename + ", count=" + count + "]";
 	}
-
-	
-
-	
 	
 }
+	
+	
