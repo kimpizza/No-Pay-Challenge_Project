@@ -48,7 +48,7 @@
 			</header>
 
 			<div class="box">
-				<form method="post" action="${cpath}/boardWrite.do">
+				<form method="post" action="${cpath}/boardWrite.do" enctype="multipart/form-data">
 					<div class="row gtr-50 gtr-uniform">
 						<input type = "hidden" name = "comm_seq" value = "${comm_seq}"/>
 						<div class="col-12">

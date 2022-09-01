@@ -27,6 +27,10 @@ public class BoardViewController implements Controller {
 		request.setAttribute("vo", vo); // 게시글 데이터
 		request.setAttribute("list", list); //댓글데이터
 		return "boardView";
+		
+		
+		
+		
 	}
 
 }

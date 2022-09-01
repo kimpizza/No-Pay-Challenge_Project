@@ -8,11 +8,12 @@ public class Board {
 	private String mb_id; // 작성자 id
 	private String mb_name; // 작성자
 	private int comm_cnt; // 조회수
+	private String filename;
 	
 	public Board() { // 디폴트 생성자
 	}
 
-	public Board(int comm_seq, String comm_title, String comm_content, String comm_date, String mb_id, String mb_name, int comm_cnt) {
+	public Board(int comm_seq, String comm_title, String comm_content, String comm_date, String mb_id, String mb_name, int comm_cnt,String filename) {
 		super();
 		this.comm_seq = comm_seq;
 		this.comm_title = comm_title;

@@ -55,12 +55,15 @@ pageContext.setAttribute("newLineChar", "\n");
 				<h2 id="title">${vo.comm_title}</h2>
 				<p id="write">${vo.mb_name}</p>
 				<p id="date">${vo.comm_date}</p>
+				<p id="filename">${vo.filename}</p>
 			</header>
 			<div class="box">
 				<div class="row-6 row-12-mobilep">
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				<hr/>
+				
+				
+				<br/>
 				<!--코멘트창-->
 				<form class="comm_comment" action="${cpath}/commWrite.do"method="get">
 				<!-- boardview로 가기 위한 파라미터 -->
