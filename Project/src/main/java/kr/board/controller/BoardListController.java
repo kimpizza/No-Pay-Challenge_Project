@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.dao.BoardMyBatisDAO;
 import kr.entity.Board;
@@ -21,7 +22,8 @@ public class BoardListController implements Controller {
 		List<Board> list = dao.allList(); // join을 이용해 불러온다
 		request.setAttribute("list", list);
 		System.out.println(list.get(0));
-		//String nextPage = "boardList";
+		
+		
 		return "boardList";
 	}
 

@@ -1,12 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
 pageContext.setAttribute("newLineChar", "\n");
 %>
+<script src="//code.jquery.com/jquery.min.js"></script>
+        <style>
+            #btn_like{
+                background-color: #C5DFFF;
+                border-radius: 20%;
+                border: 1px;
+            }
+            .likebox{
+                margin-left: 92%;
+            }
+        </style>
 <!DOCTYPE HTML>
 <!--
     Alpha by HTML5 UP
@@ -55,15 +67,34 @@ pageContext.setAttribute("newLineChar", "\n");
 				<h2 id="title">${vo.comm_title}</h2>
 				<p id="write">${vo.mb_name}</p>
 				<p id="date">${vo.comm_date}</p>
-				<p id="filename">${vo.filename}</p>
+				
 			</header>
 			<div class="box">
 				<div class="row-6 row-12-mobilep">
+					
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				
-				
+				<c:if test="${vo.filename != '너무길hgf면gdf안되나fgg'}"> 
+				<c:set var="text2" value="${vo.filename}"/>
+				<c:set var="text" value="${fn:split(text2,'.')[1]}"/>
+				<c:if test="${text eq 'jpg' or text eq 'png' or text eq 'gif' or text eq 'JPG' or text eq 'PNG' or text eq 'GIF'}">
+					<img src="upload/${vo.filename}" style="max-width:600px; height:auto;"><br/>
+				</c:if>
+				<c:if test="${text != 'jpg' and text != 'png' and text != 'gif' and text != 'GIF' and text != 'PNG' and text != 'JPG'}">
+					<a href="upload/${vo.filename}" id="filename">${vo.filename}</a> 
+				</c:if>
+				</c:if>
 				<br/>
+				<!--좋아요-->
+            <div class='likebox'>
+            <button class="like_btn" id="btn_like">🧡<h4 id="countLike">0</h4></button>
+        <script>
+            let like = document.getElementById('countLike');
+            $(".like_btn").click(function() {
+                    like.innerText++;
+            })
+            </script>
+            </div>
 				<!--코멘트창-->
 				<form class="comm_comment" action="${cpath}/commWrite.do"method="get">
 				<!-- boardview로 가기 위한 파라미터 -->
@@ -85,8 +116,10 @@ pageContext.setAttribute("newLineChar", "\n");
 						</table>
 						<input type="hidden" name="num" value = ${vo.comm_seq}>
 						<div class="col-9 col-12-mobilep">
+						<c:if test="${!empty mvo}">
 							<input type="text" name="comment" id="query" value placeholder="댓글을 입력하세요" style="width: 88%;">
 							<input type="submit" value="작성" style="background-color:#141A35">
+						</c:if>
 						</div>
 				</form>
 			</div>

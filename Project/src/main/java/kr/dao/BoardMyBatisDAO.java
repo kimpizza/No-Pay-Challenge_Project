@@ -80,4 +80,5 @@ public class BoardMyBatisDAO {
 		session.close();
 		return vo;
 	}
+	
 }

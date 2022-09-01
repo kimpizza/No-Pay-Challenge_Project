@@ -28,7 +28,7 @@ public class BoardWriteController implements Controller {
 		
 		
 		
-		//////////////////////////////////////////////
+		//go 무조건 성공한다는 가정하에 코드 짠거라 예외 발생하면 난 몰라////////////////////////////////////////////
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
@@ -53,38 +53,39 @@ public class BoardWriteController implements Controller {
 				encType,
 				new DefaultFileRenamePolicy());
 				
-			String fileName = multi.getFilesystemName("uploadFile");
-			
-			if(fileName==null) {
-				System.out.println("파일이 업로드되지 않았음");
-			}else {
-				out.println("<br>파일명 :" + fileName);
+				String filename = multi.getFilesystemName("uploadFile"); 
+				
+				BoardMyBatisDAO dao = new BoardMyBatisDAO();
+				request.setCharacterEncoding("utf-8");
+				//int comm_seq = Integer.parseInt(request.getParameter("comm_seq"));
+				String title = multi.getParameter("title");
+				String content = multi.getParameter("content");  
+				// System.out.println(title);
+				// System.out.println(content);
+				HttpSession session = request.getSession();
+				tbl_member mvo = (tbl_member) session.getAttribute("mvo"); // 회원세션 가져오기
+				String id = mvo.getMb_id();
+				System.out.println(id);
+				Board vo = new Board();
+				vo.setMb_id(id);
+				vo.setComm_title(title);
+				vo.setComm_content(content);
+			if(filename==null) { 
+				filename="너무길hgf면gdf안되나fgg"; 
+				vo.setFilename(filename);
+				dao.boardWrite(vo);
+				vo = dao.rescent();
+				request.setAttribute("vo", vo);
+			}else { 
+				vo.setFilename(filename);
+				dao.boardWrite(vo);
+				vo = dao.rescent(); //ㅇ얜 뭐하는애ㅇㅔㅇ요> 저도 모 르지만 민우씨가 만든 .. 뭔가일거에요 .. 그런느
+				request.setAttribute("vo", vo);
 			}
 		}catch(Exception e) {
 			System.out.println("예외발생" + e);  
 		}
-		
-		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		request.setCharacterEncoding("utf-8");
-		//int comm_seq = Integer.parseInt(request.getParameter("comm_seq"));
-		String title = multi.getParameter("title");
-		String content = multi.getParameter("content");  
-		// System.out.println(title);
-		// System.out.println(content);
-		HttpSession session = request.getSession();
-		tbl_member mvo = (tbl_member) session.getAttribute("mvo"); // 회원세션 가져오기
-		String id = mvo.getMb_id();
-		System.out.println(id);
-		Board vo = new Board();
-		
-		vo.setMb_id(id);
-		vo.setComm_title(title);
-		vo.setComm_content(content);
-		dao.boardWrite(vo);
-		vo = dao.rescent();
-		request.setAttribute("vo", vo);
-		
-		return "boardView";
+		return "boardView"; //끝!
 	}
 
 }
