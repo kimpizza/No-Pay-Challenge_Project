@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -55,14 +56,23 @@ pageContext.setAttribute("newLineChar", "\n");
 				<h2 id="title">${vo.comm_title}</h2>
 				<p id="write">${vo.mb_name}</p>
 				<p id="date">${vo.comm_date}</p>
-				<p id="filename">${vo.filename}</p>
+				
 			</header>
 			<div class="box">
 				<div class="row-6 row-12-mobilep">
+					
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				
-				
+				<c:if test="${vo.filename != '김재강김재강김재강'}">
+				<c:set var="text2" value="${vo.filename}"/>
+				<c:set var="text" value="${fn:split(text2,'.')[1]}"/>
+				<c:if test="${text eq 'jpg' or text eq 'png' or text eq 'gif'}">
+					<img src="upload/${vo.filename}"><br/>
+				</c:if>
+				<c:if test="${text != 'jpg' and text != 'png' and text != 'gif'}">
+					<a href="upload/${vo.filename}" id="filename">${vo.filename}</a>
+				</c:if>
+				</c:if>
 				<br/>
 				<!--코멘트창-->
 				<form class="comm_comment" action="${cpath}/commWrite.do"method="get">

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE HTML>
 <!--
@@ -65,15 +66,26 @@
 								<tbody>
 									
 										<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
-									<c:forEach var="vo" items="${list}">
+										<c:set var="volen" value="${fn:length(list)}"/>
+										<script>console.log("${volen}")</script>
+										<c:forEach var="i" begin="0" end="${volen}" step="1"> 
 										<tr>
-											<td>${vo.comm_seq}</td>
+											<td>${list[volen-i].comm_seq}</td> 
+											<td><a href="boardView.do?num=${list[volen-i].comm_seq}" />${list[volen-i].comm_title}</td>
+											<td>${list[volen-i].mb_name}</td>
+											<!-- 착해질게요 -->
+											<td>${list[volen-i].comm_cnt}</td>
+										</tr>
+									</c:forEach>
+									<%-- <c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${vo.comm_seq}</td> 
 											<td><a href="boardView.do?num=${vo.comm_seq}" />${vo.comm_title}</td>
 											<td>${vo.mb_name}</td>
 											<!-- 착해질게요 -->
 											<td>${vo.comm_cnt}</td>
 										</tr>
-									</c:forEach>
+									</c:forEach> --%>
 								</tbody>
 
 							</table>

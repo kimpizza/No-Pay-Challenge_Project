@@ -10,6 +10,14 @@ public class Board {
 	private int comm_cnt; // 조회수
 	private String filename;
 	
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
 	public Board() { // 디폴트 생성자
 	}
 
@@ -82,10 +90,12 @@ public class Board {
 	@Override
 	public String toString() {
 		return "Board [comm_seq=" + comm_seq + ", comm_title=" + comm_title + ", comm_content=" + comm_content
-				+ ", comm_date=" + comm_date + ", mb_id=" + mb_id + ", comm_cnt=" + comm_cnt + "]";
+				+ ", comm_date=" + comm_date + ", mb_id=" + mb_id + ", mb_name=" + mb_name + ", comm_cnt=" + comm_cnt
+				+ ", filename=" + filename + "]";
 	}
 
 	
+
 	
 	
 }
