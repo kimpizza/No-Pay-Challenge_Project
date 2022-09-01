@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@300;500&display=swap');
 
 .member_ui{
     width: 100px;
@@ -202,7 +202,7 @@
 
 	body, input, select, textarea {
 		color: #141A35;
-		font-family: "Source Sans Pro", sans-serif;
+		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.65em;
@@ -214,11 +214,10 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
+		border-bottom: 0px;
 		color: #141A35;
 		text-decoration: none;
 	}
-
 		a:hover {
 			border-bottom-color: transparent;
 		}
@@ -312,7 +311,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		font-family: monospace;
+	font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 0.9em;
 		line-height: 1.75em;
 		margin: 0 0 2em 0;
@@ -324,7 +323,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		font-family: monospace;
+		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -2250,7 +2249,7 @@
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+			font-family: 'IBM Plex Sans KR', sans-serif;
 				font-weight: 900;
 			}
 
@@ -2446,7 +2445,7 @@
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+		font-family: 'IBM Plex Sans KR', sans-serif;
 			font-weight: 400;
 		}
 
@@ -2463,7 +2462,7 @@
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: 'IBM Plex Sans KR', sans-serif;
 		}
 
 		.icon.major {
@@ -3610,7 +3609,7 @@
 						text-rendering: auto;
 						line-height: 1;
 						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
+						font-family: 'IBM Plex Sans KR', sans-serif;
 						font-weight: 900;
 					}
 

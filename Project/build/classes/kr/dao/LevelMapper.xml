@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><!-- mapper태그에 dtd를정의했기에 mapper의 태그이름을 바꾸면 안된다 -->
+<mapper namespace="kr.dao.LevelMapper"> <!-- 패키지이름 + 파일이름 경로가 아닌 이름이기에 /가 아닌 .을 붙인 것 -->
+   <select id = "levelList" resultType="kr.entity.Tbl_Level_Community" parameterType="kr.entity.Tbl_Level_Community"><!-- id : DAO의 메소드이름 -->
+    select l.LV_SEQ, l.LV_TITLE, l.LV_CONTENT, l.LV_DATE, m.MB_ID, l.LV_CNT
+	from TBL_LEVEL_COMMUNITY_${level} l INNER JOIN TBL_MEMBER m on l.mb_id = m.mb_id
+	order by LV_SEQ ASC
+  </select>
+  
+</mapper>

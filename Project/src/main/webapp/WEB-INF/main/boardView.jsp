@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%
@@ -52,14 +53,17 @@ pageContext.setAttribute("newLineChar", "\n");
 		<section id="main" class="container">
 			<header>
 				<h2 id="title">${vo.comm_title}</h2>
-				<p id="write">${vo.mb_id}</p>
+				<p id="write">${vo.mb_name}</p>
 				<p id="date">${vo.comm_date}</p>
+				<p id="filename">${vo.filename}</p>
 			</header>
 			<div class="box">
 				<div class="row-6 row-12-mobilep">
 					<p>${fn:replace(vo.comm_content, newLineChar , "<br/>")}</p>
 				</div>
-				<hr/>
+				
+				
+				<br/>
 				<!--코멘트창-->
 				<form class="comm_comment" action="${cpath}/commWrite.do"method="get">
 				<!-- boardview로 가기 위한 파라미터 -->
@@ -68,15 +72,14 @@ pageContext.setAttribute("newLineChar", "\n");
 						<table>
 							<tbody>
 									<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
-								<c:forEach var="vo" items="${list}">
+								<c:forEach var="vo" items="${list}" varStatus="status">
 								<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
 								<tr>
-									<td>${vo.comm_cmt_seq}</td>
+									<td>${status.index + 1}</td>
 									<td>${vo.comm_cmt_content}</td>
-									<td>${vo.mb_id}</td>
+									<td>${vo.mb_name}</td>
 								</tr>
-								</br>
-							</c:forEach>
+							</c:forEach></br>
 								</br>
 							</tbody>
 						</table>
@@ -93,10 +96,13 @@ pageContext.setAttribute("newLineChar", "\n");
 		<ul class="actions special">
 			<li><input type="button" value="목록으로" id="goList"
 				onclick="goList()" /></li>
-			<li><input type="button" value="수정하기" id="update"
-				onclick="goUpdate()" /></li>
-			<li><input type="button" value="삭제하기" id="delete"
-				onclick="goDelete()" /></li>
+				
+			  <c:if test="${vo.mb_id eq mvo.mb_id}">
+				<li><input type="button" value="수정하기" id="update"
+					onclick="goUpdate()" /></li>
+				<li><input type="button" value="삭제하기" id="delete"
+					onclick="goDelete()" /></li>
+			  </c:if>
 		</ul>
 	</div>
 				</br></br>

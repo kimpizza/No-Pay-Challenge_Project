@@ -20,8 +20,7 @@
 </head>
 <body class="is-preload">
 	
-	<form method=get action='${cpath}/boardWrite.do'>
-			<!-- Header -->
+	<form method=get action='${cpath}/boardWriteForm.do'>
     <nav>
         <ul>
 			<c:if test="${empty mvo}">

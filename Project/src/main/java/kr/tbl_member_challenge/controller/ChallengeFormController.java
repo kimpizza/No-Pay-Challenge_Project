@@ -1,15 +1,19 @@
 package kr.tbl_member_challenge.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.board.controller.Controller;
 import kr.dao.ChallDAO;
 import kr.entity.sumMonthPay;
+import kr.entity.tbl_member;
 import kr.entity.tbl_member_challenge;
 
 public class ChallengeFormController implements Controller {
@@ -17,14 +21,80 @@ public class ChallengeFormController implements Controller {
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String mb_id = request.getParameter("mb_id");
-		 
+		// d-day
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		Calendar c1 = Calendar.getInstance();
+		int strToday = 20220921-Integer.parseInt(sdf.format(c1.getTime())); 
+		request.setAttribute("dday",strToday);
+		HttpSession session = request.getSession();
+		
+		tbl_member mvo = (tbl_member)session.getAttribute("mvo");
+		String mb_id = mvo.getMb_id();
+		
 		ChallDAO dao = new ChallDAO();
+		int sum=0;
+		// 일일 소비금액 리스트
 		List<sumMonthPay> paylist = dao.sumMonPay(mb_id);
-		  System.out.println(paylist); // 어떻게 월별로 갑승ㄹ 주지업
-		  // 그럼 if문으로 없는 달은 다 0으로 넣는건 그래서 젤 (머리가)간단하고 귀찮은건 if문 12개 ㅋㅋㅋ와ㅋㅋㅋㅋㅋ월별로 리스트 다시 만들어서 js에서 리스트값 
-		  // 민우가 보낸거 다시 해서 깃랩에 올려달래요 아 맞다
-		  request.setAttribute("paylist", paylist);
+		
+		int[] sumPay = new int[7];
+		for(sumMonthPay p:paylist) {
+			for(int j=1;j<=7;j++) {
+				if(p.getDay().equals("2022090"+j)) { 
+					sumPay[j-1] = p.getSumPay();
+					sum+= p.getSumPay();
+				}
+			}
+			/*
+			 * for(int j=10;j<=21;j++) { if(p.getDay().equals("202209"+j)) { sumPay[j-1] =
+			 * p.getSumPay(); sum+=p.getSumPay(); } }
+			 */
+		}request.setAttribute("sum", sum);
+		request.setAttribute("sumPay", sumPay);
+		///////////////////////////////////
+		
+		// 항목 별 소비금액 리스트
+		List<sumMonthPay> itemlist = dao.sumItemPay(mb_id);
+		int[] sumItem = {0,0,0,0,0};
+		for(sumMonthPay p:itemlist) {
+			for(int j=1;j<=9;j++) {
+				if(p.getDay().equals("2022090"+j)) { 
+					for(int i=1;i<=5;i++) {
+						if(p.getItem()==i) {
+							sumItem[i-1]+=p.getSumPay();
+						}
+					}
+				}
+			}
+			for(int j=10;j<=21;j++) {
+				if(p.getDay().equals("202209"+j)) {
+					for(int i=1;i<=5;i++) {  
+						if(p.getItem()==i) {
+							sumItem[i-1]+=p.getSumPay();
+						}
+					}
+				}
+			}
+		}
+		request.setAttribute("sumItemPay",sumItem);  
+		
+		//일년 소비금액 리스트
+		int[] yearPay = new int[5];
+		for(sumMonthPay p:itemlist) {
+			for(int j=1;j<=9;j++) {
+				if(p.getDay().contains("20220"+j)){ 
+					for(int i=1;i<=5;i++) {  
+						if(p.getItem()==i) {
+							yearPay[i-1] += p.getSumPay();
+						}
+					}
+					
+				}
+			}
+		}
+		
+		request.setAttribute("yearPay",yearPay);  
+		
+		
 		return "mychall";
 	
 	}

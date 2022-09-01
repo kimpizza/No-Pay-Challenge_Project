@@ -45,4 +45,13 @@ public class ChallDAO {
 		session.close();
 		return list;
 	}
+	public List<sumMonthPay> sumItemPay(String c) {
+		SqlSession session= sqlSessionFactory.openSession(); // openSession = 세션을 꺼내온다
+		
+		List<sumMonthPay> list = session.selectList("sumItemPay", c); // 여러개를 가져오는 selectList / id이름을 찾아간다
+		session.close();
+		return list;
+	}
+	
+	
 }

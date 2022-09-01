@@ -12,9 +12,6 @@ public class BoardWriteFormController implements Controller {
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int comm_seq = Integer.parseInt(request.getParameter("num"));
-		System.out.println(comm_seq);
-		request.setAttribute("comm_seq", comm_seq);
 		return "boardWrite";
 	}
 

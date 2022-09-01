@@ -4,6 +4,7 @@ public class sumMonthPay {
 
 	private String day;
 	private int sumPay;
+	private int item;
 	
 	public sumMonthPay() {
 		super();
@@ -14,6 +15,22 @@ public class sumMonthPay {
 	
 	
 	
+	public int getItem() {
+		return item;
+	}
+
+
+
+
+
+	public void setItem(int item) {
+		this.item = item;
+	}
+
+
+
+
+
 	public String getDay() {
 		return day;
 	}
@@ -48,8 +65,15 @@ public class sumMonthPay {
 
 	@Override
 	public String toString() {
-		return "[day=" + day + ", sumPay=" + sumPay + "]";
+		return "sumMonthPay [day=" + day + ", sumPay=" + sumPay + ", item=" + item + "]";
 	}
+
+
+
+
+
+
+	
 	
 	
 	

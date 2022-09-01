@@ -15,28 +15,29 @@
 <body class="is-preload">
 
 	 <!-- Header -->
-					 <nav>
-						<ul>
-						  <li>
-							<a href="main copy 2.html">Home</a>
-						  </li>
-						  <li>
-							<a href="savePoint.html">Save Point</a>
-						  </li>
-						  <li>
-							<a href="boardList.html">Board</a>
-						  </li>
-						  <li>
-							<a href="main copy 2.html">My Challenge</a>
-						  </li>
-						  <li>
-							<a href="myPage.html">my page</a>
-						  </li>
-						  <li>
-							<a class="login_btn" id="login">Login</a>
-						  </li>
-						</ul>
-					  </nav>
+    <nav>
+        <ul>
+			<c:if test="${empty mvo}">
+			<li><a href="${cpath}/mainForm.do">Home</a></li>
+			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
+			<li><a href="" onclick="checkLogin()">Level</a></li>
+			<li><a href="${cpath}/boardList.do">Board</a></li>
+			<li><a href="" onclick="checkLogin()">My Challenge</a></li>
+			<li><a href="" onclick="checkLogin()">My Page</a></li>
+		    	<li><a class="login_btn" id="login">Login</a></li>
+		    </c:if>
+		    <c:if test="${!empty mvo}">
+		    <li><a href="${cpath}/mainForm.do">Home</a></li>
+			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
+			<li><a href="">Level</a></li>
+			<li><a href="${cpath}/boardList.do">Board</a></li>
+			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
+		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>
+			    <li><a href="${cpath}/logout.do" class="login_btn">Logout</a></li>
+		    </c:if>
+			
+		</ul>
+      </nav>
 					</br>
 
 		<!-- Main -->
@@ -47,7 +48,7 @@
 			</header>
 
 			<div class="box">
-				<form method="post" action="${cpath}/boardWrite.do">
+				<form method="post" action="${cpath}/boardWrite.do" enctype="multipart/form-data">
 					<div class="row gtr-50 gtr-uniform">
 						<input type = "hidden" name = "comm_seq" value = "${comm_seq}"/>
 						<div class="col-12">
@@ -58,6 +59,9 @@
 							<textarea name="content" id="message" placeholder="글 내용을 입력하세요."
 								rows="6"></textarea>
 						</div>
+						
+						<input type="file" name="uploadFile">
+						
 						<div class="col-12">
 							<ul class="actions special">
 								<li><input type="submit" value="게시하기" id="submit" /></li>

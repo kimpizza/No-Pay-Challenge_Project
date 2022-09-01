@@ -25,7 +25,7 @@
 <nav>
         <ul>
 			<c:if test="${empty mvo}">
-			<li><a href="">Home</a></li>
+			<li><a href="${cpath}/mainForm.do">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
 			<li><a href="" onclick="checkLogin()">Level</a></li>
 			<li><a href="${cpath}/boardList.do">Board</a></li>
@@ -34,7 +34,7 @@
 		    	<li><a class="login_btn" id="login">Login</a></li>
 		    </c:if>
 		    <c:if test="${!empty mvo}">
-		    <li><a href="">Home</a></li>
+		    <li><a href="${cpath}/mainForm.do">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
 			<li><a href="">Level</a></li>
 			<li><a href="${cpath}/boardList.do">Board</a></li>
