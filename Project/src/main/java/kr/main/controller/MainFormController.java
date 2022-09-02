@@ -23,8 +23,7 @@ public class MainFormController implements Controller {
 			throws ServletException, IOException {
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
 		List<Board> list = dao.topList();
-		request.setAttribute("list", list);
-		
+		request.setAttribute("list", list); //
 		
 		
 		return "main";

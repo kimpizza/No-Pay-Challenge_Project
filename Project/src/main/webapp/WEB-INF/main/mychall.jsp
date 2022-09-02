@@ -1,270 +1,294 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minmum-scale=1.0, user-scalable=1.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
-  <link rel="stylesheet" href="CSS/mychallenge.css">
-  <link rel="stylesheet" href="CSS/header.css">
-  <style type="text/css">
-    /* Chart.js */
-    @keyframes chartjs-render-animation {
-      from {
-        opacity: .99
-      }
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minmum-scale=1.0, user-scalable=1.0">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+	crossorigin="anonymous">
+<title>Document</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="CSS/mychallenge.css">
+<link rel="stylesheet" href="CSS/header.css">
+<style type="text/css">
+/* Chart.js */
+@
+keyframes chartjs-render-animation {from { opacity:.99
+	
+}
 
-      to {
-        opacity: 1
-      }
-    }
+to {
+	opacity: 1
+}
 
-    .chartjs-render-monitor {
-      animation: chartjs-render-animation 1ms
-    }
+}
+.chartjs-render-monitor {
+	animation: chartjs-render-animation 1ms
+}
 
-    .chartjs-size-monitor,
-    .chartjs-size-monitor-expand,
-    .chartjs-size-monitor-shrink {
-      position: absolute;
-      direction: ltr;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      overflow: hidden;
-      pointer-events: none;
-      visibility: hidden;
-      z-index: -1
-    }
-  </style>
+.chartjs-size-monitor, .chartjs-size-monitor-expand,
+	.chartjs-size-monitor-shrink {
+	position: absolute;
+	direction: ltr;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	pointer-events: none;
+	visibility: hidden;
+	z-index: -1
+}
+</style>
 </head>
 
 <body>
-  <!-- Header -->
-  <nav>
-        <ul>
+	<!-- Header -->
+	<nav>
+		<ul>
 			<c:if test="${empty mvo}">
-			<li><a href="${cpath}/mainForm.do">Home</a></li>
-			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="" onclick="checkLogin()">Level</a></li>
-			<li><a href="${cpath}/boardList.do">Board</a></li>
-			<li><a href="" onclick="checkLogin()">My Challenge</a></li>
-			<li><a href="" onclick="checkLogin()">My Page</a></li>
-		    	<li><a class="login_btn" id="login">Login</a></li>
-		    </c:if>
-		    <c:if test="${!empty mvo}">
-		    <li><a href="${cpath}/mainForm.do">Home</a></li>
-			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="">Level</a></li>
-			<li><a href="${cpath}/boardList.do">Board</a></li>
-			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
-		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>
-			    <li><a href="${cpath}/logout.do" class="login_btn">Logout</a></li>
-		    </c:if>
-			
+				<li><a href="${cpath}/mainForm.do">Home</a></li>
+				<li><a href="${cpath}/savePointList.do">Save Point</a></li>
+				<li><a href="" onclick="checkLogin()">Level</a></li>
+				<li><a href="${cpath}/boardList.do">Board</a></li>
+				<li><a href="" onclick="checkLogin()">My Challenge</a></li>
+				<li><a href="" onclick="checkLogin()">My Page</a></li>
+				<li><a class="login_btn" id="login">Login</a></li>
+			</c:if>
+			<c:if test="${!empty mvo}">
+				<li><a href="${cpath}/mainForm.do">Home</a></li>
+				<li><a href="${cpath}/savePointList.do">Save Point</a></li>
+				<li><a href="">Level</a></li>
+				<li><a href="${cpath}/boardList.do">Board</a></li>
+				<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My
+						Challenge</a></li>
+				<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>
+				<li><a href="${cpath}/logout.do" class="login_btn">Logout</a></li>
+			</c:if>
+
 		</ul>
-      </nav>
-  <div class="container1">
-    <div class="container2">
-      <div id="today_box" class="box_shadow"><br>
-        <span class="" id="">${mvo.mb_name} </span><br>
-        <span>D-${dday}</span>
-        <div class="calendar"></div>
-        <div class="sec_cal" style="max-width: 233px; margin: 0px auto;">
-          <div class="cal_nav">
-            <a href="javascript:;" class="nav-btn go-prev">prev</a>
-            <div class="year-month"></div>
-            <a href="javascript:;" class="nav-btn go-next">next</a>
-          </div>
+	</nav>
+	<div class="container1">
+		<div class="container2">
+			<div id="today_box" class="box_shadow">
+				<br> <span class="" id="">${mvo.mb_name} </span><br> <span>D-${dday}</span>
+				<div class="calendar"></div>
+				<div class="sec_cal" style="max-width: 233px; margin: 0px auto;">
+					<div class="cal_nav">
+						<a href="javascript:;" class="nav-btn go-prev">prev</a>
+						<div class="year-month"></div>
+						<a href="javascript:;" class="nav-btn go-next">next</a>
+					</div>
 
-          <div class="cal_wrap">
-            <div class="days">
-              <div class="day">MON</div>
-              <div class="day">TUE</div>
-              <div class="day">WED</div>
-              <div class="day">THU</div>
-              <div class="day">FRI</div>
-              <div class="day">SAT</div>
-              <div class="day">SUN</div>
-            </div>
-            <div class="dates" style="max-height: 250px;"></div>
-          </div>
-        </div>
-
-        
-      </div>
+					<div class="cal_wrap">
+						<div class="days">
+							<div class="day">MON</div>
+							<div class="day">TUE</div>
+							<div class="day">WED</div>
+							<div class="day">THU</div>
+							<div class="day">FRI</div>
+							<div class="day">SAT</div>
+							<div class="day">SUN</div>
+						</div>
+						<div class="dates" style="max-height: 250px;"></div>
+					</div>
+				</div>
 
 
+			</div>
 
-      <div id="target_box" class="box_shadow">
 
 
-        <div class="target_money_text">
-          <span>목표 금액</span><br>
+			<div id="target_box" class="box_shadow">
 
-        </div>
-        <input type="text" class="input_target_money target_margin" id="" value="${mvo.challenge_total}" disabled="">
-        <input type="text" class="input_now_money target_margin" id="" value="${sum}" disabled="">
-        <div class="col-12">
-        <form action="${cpath}/challenge.do" class="sun">
-                <input type="hidden" name="mb_id" value="${mvo.mb_id}"/>
-                <input type="hidden" name="aaa" value="aaa"/>
-          <select name="priority" class="target_margin" id="category">
-            <option value="">- 선택 -</option>
-            <option value="1">1.쇼핑</option>
-            <option value="2">2.식비</option>
-            <option value="3">3.여가</option>
-            <option value="4">4.교통</option>
-            <option value="5">5.기타</option>
-          </select>
-        </div>
-        <div>
-          <input type="text" class="target_margin a" value="" name="pay_money" placeholder="소비금액 입력"/>
-        </div>
-        <ul class="actions fit">
 
-          <li><button type="submit" class="btn_1" onclick="over()">저장</button></li>
+				<div class="target_money_text">
+					<span>목표 금액</span><br>
 
-        </ul>
-        </form>
-		<script>
+				</div>
+				<input type="text" class="input_target_money target_margin" id=""
+					value="${mvo.challenge_total}" disabled=""> <input
+					type="text" class="input_now_money target_margin" id=""
+					value="${sum}" disabled="">
+				<div class="col-12">
+					<form action="${cpath}/challenge.do" class="sun">
+						<input type="hidden" name="mb_id" value="${mvo.mb_id}" /> <input
+							type="hidden" name="aaa" value="aaa" /> <select name="priority"
+							class="target_margin" id="category">
+							<option value="">- 선택 -</option>
+							<option value="1">1.쇼핑</option>
+							<option value="2">2.식비</option>
+							<option value="3">3.여가</option>
+							<option value="4">4.교통</option>
+							<option value="5">5.기타</option>
+						</select>
+				</div>
+				<div>
+					<input type="text" class="target_margin a" value=""
+						name="pay_money" placeholder="소비금액 입력" />
+				</div>
+				<ul class="actions fit">
+
+					<li><button type="submit" class="btn_1" onclick="over()">저장</button></li>
+
+				</ul>
+				</form>
+				<script>
 		function over(){
 			if(${mvo.challenge_total < sum}){
 				alert("으이구~~돈 좀 아껴써라~🤦‍🤦‍♂️🤦💸💸💸💸💸")
-<<<<<<< HEAD
+
 				
 			}
 			if(document.querySelector("input.a").value==""){
 				alert("금액을 입력하세요.");
 			}
 		}
-=======
-				event.preventDefault();
-			}
-		}
-		
-	
-		
-		
->>>>>>> a4f89a0a9025ce6bb458cba65d28234872fa321f
 		</script>
 
 
 
-      </div>
+			</div>
 
-    </div>
-    <div id="main_box" class="box_shadow" style="color: rgb(0, 0, 0)">
-      <div class="main_top_div">
-        <div class="card mb-4">
-          <div class="card-header">
-            <!-- <svg class="svg-inline--fa fa-chart-area me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-area" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M64 400C64 408.8 71.16 416 80 416H480C497.7 416 512 430.3 512 448C512 465.7 497.7 480 480 480H80C35.82 480 0 444.2 0 400V64C0 46.33 14.33 32 32 32C49.67 32 64 46.33 64 64V400zM128 320V236C128 228.3 130.8 220.8 135.9 214.1L215.3 124.2C228.3 109.4 251.4 109.7 263.1 124.8L303.2 171.8C312.2 182.7 328.6 183.4 338.6 173.4L359.6 152.4C372.7 139.3 394.4 140.1 406.5 154.2L472.3 231C477.3 236.8 480 244.2 480 251.8V320C480 337.7 465.7 352 448 352H159.1C142.3 352 127.1 337.7 127.1 320L128 320z"></path></svg> -->
-            <i class="fas fa-chart-area me-1"></i>
-            3주 소비 차트
-          </div>
+		</div>
+		<div id="main_box" class="box_shadow" style="color: rgb(0, 0, 0)">
+			<div class="main_top_div">
+				<div class="card mb-4">
+					<div class="card-header">
+						<!-- <svg class="svg-inline--fa fa-chart-area me-1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-area" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M64 400C64 408.8 71.16 416 80 416H480C497.7 416 512 430.3 512 448C512 465.7 497.7 480 480 480H80C35.82 480 0 444.2 0 400V64C0 46.33 14.33 32 32 32C49.67 32 64 46.33 64 64V400zM128 320V236C128 228.3 130.8 220.8 135.9 214.1L215.3 124.2C228.3 109.4 251.4 109.7 263.1 124.8L303.2 171.8C312.2 182.7 328.6 183.4 338.6 173.4L359.6 152.4C372.7 139.3 394.4 140.1 406.5 154.2L472.3 231C477.3 236.8 480 244.2 480 251.8V320C480 337.7 465.7 352 448 352H159.1C142.3 352 127.1 337.7 127.1 320L128 320z"></path></svg> -->
+						<i class="fas fa-chart-area me-1"></i> 3주 소비 차트
+					</div>
 
-          <div class="area_chart_div card-body">
-           
-            <canvas class="chartjs-render-monitor" id="myAreaChart" width="641" height="220" style="display: block; height: 189px; width: 641px;"></canvas>
-          </div>
+					<div class="area_chart_div card-body">
 
-        </div>
-      </div>
+						<canvas class="chartjs-render-monitor" id="myAreaChart"
+							width="641" height="220"
+							style="display: block; height: 189px; width: 641px;"></canvas>
+					</div>
 
-      <div class="main_mid_div" style="height: 1px;">
-        <hr style="color: black; border-color: black;">
-      </div>
+				</div>
+			</div>
 
-      <div class="main_bottom_div">
+			<div class="main_mid_div" style="height: 1px;">
+				<hr style="color: black; border-color: black;">
+			</div>
 
-
-
-        <div class="div_ex card mb-4">
-          <div class="card-header">
-            <i class="fas fa-chart-pie me-1"></i>
-            3주 소비 차트
-          </div>
-          <div class="ex1 card-body">
-            <canvas id="myPieChart" width="455" height="227" style="display: block; height: 182px; width: 364px;"
-              class="ex1 chartjs-render-monitor"></canvas>
-            <div class="chartjs-size-monitor">
-              <div class=" chartjs-size-monitor-expand">
-                
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div class=""></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="div_ex card mb-4">
-          <div class="card-header">
-            <i class="fas fa-chart-pie me-1"></i>
-            1년 소비 차트
-          </div>
-          <div class="ex1 card-body">
-            <canvas id="myPieChart2" width="455" height="227" style="display: block; height: 182px; width: 364px;"
-              class="ex1 chartjs-render-monitor"></canvas>
-            <div class="chartjs-size-monitor">
-              <div class=" chartjs-size-monitor-expand">
-                <div class=""></div>
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div class=""></div>
-              </div>
-            </div>
-          </div>
-        </div> 
-        
-      </div>
-      
-        
-      
-      
-    </div>
-    
+			<div class="main_bottom_div">
 
 
 
-  </div>
+				<div class="div_ex card mb-4">
+					<div class="card-header">
+						<i class="fas fa-chart-pie me-1"></i> 3주 소비 차트
+					</div>
+					<div class="ex1 card-body">
+						<canvas id="myPieChart" width="455" height="227"
+							style="display: block; height: 182px; width: 364px;"
+							class="ex1 chartjs-render-monitor"></canvas>
+						<div class="chartjs-size-monitor">
+							<div class=" chartjs-size-monitor-expand"></div>
+							<div class="chartjs-size-monitor-shrink">
+								<div class=""></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-  </div>
-  <div>
-        <img src="img/배경.png" style="position: absolute;width: 90%;top:171%;left: 5%; height: 70%;"/>
-        <img src="img/카드추천.png" style="position: absolute;width: 25%;top:175%;left: 36% ;">
-        <img src="img/영역.png" style="position: absolute;width: 40%;top:171%;left: 4%;"/>
-        <img src="img/영역.png" style="position: absolute;width: 40%;top:171%;left: 56.8%;"/>
-        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:185%;left: 8%;"/>
-        <img src="img/ezgif.com-gif-maker.gif" style="position: absolute;width:3%;top:185%;left: 61%;"/>
-        <img src="img/카드추천_그림.png" style="position: absolute;width: 14%;top:196%;left: 42%;"/>
-        <img src="img/오하쳌(오늘하루체크)(우리카드) (2).jpg" style="border-radius: 7px; position: absolute;width: 17%;top:176%;left: 19%;box-shadow: 5px 5px 10px;color:gray;"/>
-        <img src="img/haebom.jpg" style="border-radius: 7px; position: absolute;width: 17%;top:176%;left: 72%;box-shadow: 5px 5px 10px;color:gray;"/>
-        <h4 style="position: absolute;left: 10%; top:204%">오늘하루 체크카드</h4>
-        
-        <p style="position: absolute;left: 11%; top:211%">- [EAT] 커피 5% 캐시백<br>- [EAT] 배달/주문 5% 캐시백</p>
-        <a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 30%; top:221%">자세히보기</a>
 
-        <h4 style="position: absolute;left: 63%; top:204%">노리 체크카드</h4>
-        <p style="position: absolute;left: 64%; top:211%">- 커피 20% 할인<br>- 배달앱 5% 할인<br>- 온라인 쇼핑 5% 할인</p>
-      </div><a href="https://www.card-gorilla.com/card/detail/762" style="position: absolute;left: 83%; top:221%">자세히보기</a>
-  </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br> </br>
-  <footer id="footer">
-    <ul class="copyright">
-      <li>&copy; non-Spending Challenge.</li>
-      <li>Design: <a>무지출챌린지</a></li>
-    </ul>
-  </footer>
-  <script type="text/javascript">
+				<div class="div_ex card mb-4">
+					<div class="card-header">
+						<i class="fas fa-chart-pie me-1"></i> 1년 소비 차트
+					</div>
+					<div class="ex1 card-body">
+						<canvas id="myPieChart2" width="455" height="227"
+							style="display: block; height: 182px; width: 364px;"
+							class="ex1 chartjs-render-monitor"></canvas>
+						<div class="chartjs-size-monitor">
+							<div class=" chartjs-size-monitor-expand">
+								<div class=""></div>
+							</div>
+							<div class="chartjs-size-monitor-shrink">
+								<div class=""></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+	</div>
+
+	</div>
+	<div>
+		<img src="img/배경.png"
+			style="position: absolute; width: 90%; top: 171%; left: 5%; height: 70%;" />
+		<img src="img/카드추천.png"
+			style="position: absolute; width: 25%; top: 175%; left: 36%;">
+		<img src="img/영역.png"
+			style="position: absolute; width: 40%; top: 171%; left: 4%;" /> <img
+			src="img/영역.png"
+			style="position: absolute; width: 40%; top: 171%; left: 56.8%;" /> <img
+			src="img/ezgif.com-gif-maker.gif"
+			style="position: absolute; width: 3%; top: 185%; left: 8%;" /> <img
+			src="img/ezgif.com-gif-maker.gif"
+			style="position: absolute; width: 3%; top: 185%; left: 61%;" /> <img
+			src="img/카드추천_그림.png"
+			style="position: absolute; width: 14%; top: 196%; left: 42%;" /> <img
+			src="img/오하쳌(오늘하루체크)(우리카드) (2).jpg"
+			style="border-radius: 7px; position: absolute; width: 17%; top: 176%; left: 19%; box-shadow: 5px 5px 10px; color: gray;" />
+		<img src="img/haebom.jpg"
+			style="border-radius: 7px; position: absolute; width: 17%; top: 176%; left: 72%; box-shadow: 5px 5px 10px; color: gray;" />
+		<h4 style="position: absolute; left: 10%; top: 204%">오늘하루 체크카드</h4>
+
+		<p style="position: absolute; left: 11%; top: 211%">
+			- [EAT] 커피 5% 캐시백<br>- [EAT] 배달/주문 5% 캐시백
+		</p>
+		<a href="https://www.card-gorilla.com/card/detail/762"
+			style="position: absolute; left: 30%; top: 221%">자세히보기</a>
+
+		<h4 style="position: absolute; left: 63%; top: 204%">노리 체크카드</h4>
+		<p style="position: absolute; left: 64%; top: 211%">
+			- 커피 20% 할인<br>- 배달앱 5% 할인<br>- 온라인 쇼핑 5% 할인
+		</p>
+	</div>
+	<a href="https://www.card-gorilla.com/card/detail/762"
+		style="position: absolute; left: 83%; top: 221%">자세히보기</a>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	<footer id="footer">
+		<ul class="copyright">
+			<li>&copy; non-Spending Challenge.</li>
+			<li>Design: <a>무지출챌린지</a></li>
+		</ul>
+	</footer>
+	<script type="text/javascript">
   $(document).ready(function () {
       calendarInit();
     });
@@ -361,11 +385,14 @@
     
     
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-   <script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script src="js/scripts.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+		crossorigin="anonymous"></script>
+	<script>
     var ctx = document.getElementById("myAreaChart");
     var myLineChart = new Chart(ctx, {
       type: 'bar',
@@ -468,8 +495,8 @@
     });
 
     </script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script>
+	<script src="assets/demo/chart-bar-demo.js"></script>
+	<script>
 	    var ctx = document.getElementById("myPieChart");
 	    var myPieChart = new Chart(ctx, {
 	      type: 'pie',
@@ -501,7 +528,7 @@
 	    });
 		console.log(${sumItemPay[1]});
     </script>
-    <script> //도넛 1월~9월 하면 되죠?네
+	<script> //도넛 1월~9월 하면 되죠?네
     var ctx = document.getElementById("myPieChart2");
     var myPieChart2 = new Chart(ctx, {
       type: 'doughnut',
@@ -535,202 +562,201 @@
     });
 
     </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 
-  <style>
-
-	.form{
-		margin: 0 0 0 0 !important;
-	}
-    .target_money_text {
-      position: relative;
-      margin: 0 0 15 0;
-
-    }
-
-    .member_ui {
-      position: relative;
-      top: -100px;
-    }
-
-    .input_target_money {
-      position: relative;
-	  margin: 0 0 0 0 !important;
-
-    }
-
-    .item {
-      flex-basis: 50%;
-    }
-
-    .area_chart_div {
-      width: 600px;
-      height: 230px;
-    }
-
-    .main_bottom_div {
-      margin-top: 50px;
-      height: 340px;
-      width: 600px;
-      
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .div_ex {
-      width: 282px;
-      height: 275px;
-      
-    }
-
-    .ex1 {
-      position: absolute;
-        width: 420px !important;
-        height: 210px !important;
-        left: -34px;
-        bottom: 20px;
-    }
-
-    hr {
-      border: 0;
-      border-bottom: solid 2px #e5e5e5;
-      margin: 1em 0;
-    }
-  .card_div{
-    position: absolute;
-    border: 2px solid rgb(214, 102, 255);
-    border-radius: 20px;
-    width: 141%;
-    height: 50%;
-    left: -267px;
-    bottom: -328px;
+	<style>
+.form {
+	margin: 0 0 0 0 !important;
 }
-.target_box .target_margin{
-  margin-top: 10px !important;
+
+.target_money_text {
+	position: relative;
+	margin: 0 0 15 0;
 }
-.day1{
-      background-color: #ed2a61;
-    }
-    .sec_cal {
-      width: 360px;
-      margin: 0 auto;
-      
-    }
-  
-    .sec_cal .cal_nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 700;
-      font-size: 48px;
-      line-height: 78px;
-    }
-  
-    .sec_cal .cal_nav .year-month {
-      width: 125px;
-      font-size: xx-large;
-      text-align: center;
-      line-height: 1;
-    }
-  
-    .sec_cal .cal_nav .nav {
-      display: flex;
-      border: 1px solid #333333;
-      border-radius: 5px;
-    }
-  
-    .sec_cal .cal_nav .go-prev,
-    .sec_cal .cal_nav .go-next {
-      display: block;
-      width: 23px;
-      height: 49px;
-      font-size: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .sec_cal .cal_nav .go-prev::before,
-    .sec_cal .cal_nav .go-next::before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid #000;
-      border-width: 3px 3px 0 0;
-      transition: border 0.1s;
-    }
-  
-    .sec_cal .cal_nav .go-prev:hover::before,
-    .sec_cal .cal_nav .go-next:hover::before {
-      border-color: #ed2a61;
-    }
-  
-    .sec_cal .cal_nav .go-prev::before {
-      transform: rotate(-135deg);
-    }
-  
-    .sec_cal .cal_nav .go-next::before {
-      transform: rotate(45deg);
-    }
-  
-    .sec_cal .cal_wrap {
-      padding-top: 5px;
-      position: relative;
-      margin: 0px auto;
-    }
-  
-    .sec_cal .cal_wrap .days {
-      display: flex;
-      margin-bottom: 13px;
-      padding-bottom: 4px;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .sec_cal .cal_wrap::after {
-      top: 368px;
-    }
-  
-    .sec_cal .cal_wrap .day {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: calc(100% / 7);
-      text-align: left;
-      color: #999;
-      font-size: 12px;
-      text-align: center;
-      border-radius: 5px
-    }
-  
-    .current.today {
-      background: rgb(242 242 242);
-    }
-  
-    .sec_cal .cal_wrap .dates {
-      display: flex;
-      flex-flow: wrap;
-      height: 167px;
-    }
-  
-    .sec_cal .cal_wrap .day:nth-child(7n -1) {
-      color: #3c6ffa;
-    }
-  
-    .sec_cal .cal_wrap .day:nth-child(7n) {
-      color: #ed2a61;
-    }
-  
-    .sec_cal .cal_wrap .day.disable {
-      color: #ddd;
-    }
-	.sun{
-		margin: 0 0 0 0;
-	}
-  
-  </style>
+
+.member_ui {
+	position: relative;
+	top: -100px;
+}
+
+.input_target_money {
+	position: relative;
+	margin: 0 0 0 0 !important;
+}
+
+.item {
+	flex-basis: 50%;
+}
+
+.area_chart_div {
+	width: 600px;
+	height: 230px;
+}
+
+.main_bottom_div {
+	margin-top: 50px;
+	height: 340px;
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.div_ex {
+	width: 282px;
+	height: 275px;
+}
+
+.ex1 {
+	position: absolute;
+	width: 420px !important;
+	height: 210px !important;
+	left: -34px;
+	bottom: 20px;
+}
+
+hr {
+	border: 0;
+	border-bottom: solid 2px #e5e5e5;
+	margin: 1em 0;
+}
+
+.card_div {
+	position: absolute;
+	border: 2px solid rgb(214, 102, 255);
+	border-radius: 20px;
+	width: 141%;
+	height: 50%;
+	left: -267px;
+	bottom: -328px;
+}
+
+.target_box .target_margin {
+	margin-top: 10px !important;
+}
+
+.day1 {
+	background-color: #ed2a61;
+}
+
+.sec_cal {
+	width: 360px;
+	margin: 0 auto;
+}
+
+.sec_cal .cal_nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 78px;
+}
+
+.sec_cal .cal_nav .year-month {
+	width: 125px;
+	font-size: xx-large;
+	text-align: center;
+	line-height: 1;
+}
+
+.sec_cal .cal_nav .nav {
+	display: flex;
+	border: 1px solid #333333;
+	border-radius: 5px;
+}
+
+.sec_cal .cal_nav .go-prev, .sec_cal .cal_nav .go-next {
+	display: block;
+	width: 23px;
+	height: 49px;
+	font-size: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sec_cal .cal_nav .go-prev::before, .sec_cal .cal_nav .go-next::before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid #000;
+	border-width: 3px 3px 0 0;
+	transition: border 0.1s;
+}
+
+.sec_cal .cal_nav .go-prev:hover::before, .sec_cal .cal_nav .go-next:hover::before
+	{
+	border-color: #ed2a61;
+}
+
+.sec_cal .cal_nav .go-prev::before {
+	transform: rotate(-135deg);
+}
+
+.sec_cal .cal_nav .go-next::before {
+	transform: rotate(45deg);
+}
+
+.sec_cal .cal_wrap {
+	padding-top: 5px;
+	position: relative;
+	margin: 0px auto;
+}
+
+.sec_cal .cal_wrap .days {
+	display: flex;
+	margin-bottom: 13px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ddd;
+}
+
+.sec_cal .cal_wrap::after {
+	top: 368px;
+}
+
+.sec_cal .cal_wrap .day {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(100%/ 7);
+	text-align: left;
+	color: #999;
+	font-size: 12px;
+	text-align: center;
+	border-radius: 5px
+}
+
+.current.today {
+	background: rgb(242, 242, 242);
+}
+
+.sec_cal .cal_wrap .dates {
+	display: flex;
+	flex-flow: wrap;
+	height: 167px;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n -1) {
+	color: #3c6ffa;
+}
+
+.sec_cal .cal_wrap .day:nth-child(7n) {
+	color: #ed2a61;
+}
+
+.sec_cal .cal_wrap .day.disable {
+	color: #ddd;
+}
+
+.sun {
+	margin: 0 0 0 0;
+}
+</style>
 
 </body>
 
