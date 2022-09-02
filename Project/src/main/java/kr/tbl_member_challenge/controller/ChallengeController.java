@@ -20,9 +20,12 @@ public class ChallengeController implements Controller {
 		String aaa = request.getParameter("aaa"); 
 		String mb_id = request.getParameter("mb_id");
 		//request.setAttribute("mb_id", mb_id); 
-		int pay_money = Integer.parseInt(request.getParameter("pay_money"));
+		String pay_money1 = request.getParameter("pay_money");
 		
-		
+		if(pay_money1.equals("")) {
+			return "redirect:/challengeForm.do";
+		}
+		int pay_money = Integer.parseInt(pay_money1);
 		  String[] items = request.getParameterValues("priority");
 		  int comm_item_seq = 0; 
 		  for(int i=0;i<items.length;i++) {

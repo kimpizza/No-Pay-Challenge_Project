@@ -39,8 +39,14 @@ public class BoardWriteController implements Controller {
 		int uploadFileSizeLimit = 5*1024*1024;
 		String encType = "UTF-8";
 		
-		ServletContext context =  request.getSession().getServletContext(); 
-		String uploadFilePath = context.getRealPath(savePath);
+		
+		
+		 // ServletContext context = request.getSession().getServletContext(); 
+		 // String uploadFilePath = context.getRealPath(savePath);
+		 
+		 
+		String uploadFilePath = "C:/Users/aischool/Desktop/imgs";
+		
 		System.out.println("서버상의 실제 디렉토리 : ");
 		System.out.println(uploadFilePath);
 		
@@ -79,7 +85,7 @@ public class BoardWriteController implements Controller {
 			}else { 
 				vo.setFilename(filename);
 				dao.boardWrite(vo);
-				vo = dao.rescent(); //ㅇ얜 뭐하는애ㅇㅔㅇ요> 저도 모 르지만 민우씨가 만든 .. 뭔가일거에요 .. 그런느
+				vo = dao.rescent(); 
 				request.setAttribute("vo", vo);
 			}
 		}catch(Exception e) {

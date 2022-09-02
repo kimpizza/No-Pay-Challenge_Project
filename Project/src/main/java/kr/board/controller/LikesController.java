@@ -6,32 +6,28 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.dao.BoardMyBatisDAO;
 import kr.dao.CommMyBatisDAO;
 import kr.entity.Board;
 import kr.entity.Comment;
 
-
-public class BoardViewController implements Controller {
+public class LikesController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		CommMyBatisDAO dao1 = new CommMyBatisDAO();
-		int num = Integer.parseInt(request.getParameter("num")); // 게시판 번호
+		HttpSession session =request.getSession();
+		int num = Integer.parseInt(request.getParameter("num"));
+		dao.likesUpdate(num);
+		
 		Board vo = dao.boardView(num); 
-		List<Comment> list= dao1.commAllList(num); // 댓글데이터 가져오기
-		dao.countUpdate(num);
-		request.setAttribute("vo", vo); // 게시글 데이터
-		request.setAttribute("list", list); //댓글데이터
-		System.out.println(vo);
+		session.setAttribute("vo", vo); // 게시글 데이터
 		
-		return "boardView";
-		
-		
-		
+		return null;
 	}
 
 }

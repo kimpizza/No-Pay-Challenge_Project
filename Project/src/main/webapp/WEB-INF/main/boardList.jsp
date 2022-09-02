@@ -60,7 +60,8 @@
 										<th>번호</th>
 										<th>제목</th>
 										<th>작성자</th>
-										<th>조희수</th>
+										<th>좋아요</th>
+										<th>조회수</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -74,6 +75,7 @@
 											<td><a href="boardView.do?num=${list[volen-i].comm_seq}" />${list[volen-i].comm_title}</td>
 											<td>${list[volen-i].mb_name}</td>
 											<!-- 착해질게요 -->
+											<td>${list[volen-i].likes}</td>
 											<td>${list[volen-i].comm_cnt}</td>
 										</tr>
 									</c:forEach>

@@ -9,23 +9,10 @@ public class Board {
 	private String mb_name; // 작성자
 	private int comm_cnt; // 조회수
 	private String filename;
+	private int likes; // 좋아요 
 	private int count; // 댓글 개수
-	
-	
-	public Board(int comm_seq, String comm_title, String comm_content, String comm_date, String mb_id, String mb_name,
-			int comm_cnt, String filename, int count) {
-		super();
-		this.comm_seq = comm_seq;
-		this.comm_title = comm_title;
-		this.comm_content = comm_content;
-		this.comm_date = comm_date;
-		this.mb_id = mb_id;
-		this.mb_name = mb_name;
-		this.comm_cnt = comm_cnt;
-		this.filename = filename;
-		this.count = count;
-	}
 	public Board() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 	public int getComm_seq() {
@@ -76,6 +63,12 @@ public class Board {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
+	}
 	public int getCount() {
 		return count;
 	}
@@ -86,9 +79,8 @@ public class Board {
 	public String toString() {
 		return "Board [comm_seq=" + comm_seq + ", comm_title=" + comm_title + ", comm_content=" + comm_content
 				+ ", comm_date=" + comm_date + ", mb_id=" + mb_id + ", mb_name=" + mb_name + ", comm_cnt=" + comm_cnt
-				+ ", filename=" + filename + ", count=" + count + "]";
+				+ ", filename=" + filename + ", likes=" + likes + ", count=" + count + "]";
 	}
 	
+	
 }
-	
-	

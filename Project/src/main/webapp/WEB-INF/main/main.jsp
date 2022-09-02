@@ -189,6 +189,7 @@
 								<th>순위</th>
 								<th>제목</th>
 								<th>작성자</th>
+								<th>좋아요</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -197,6 +198,7 @@
 								<td>${i}</td>  
 								<td><a href="${cpath}/boardView.do?num=${list[i-1].comm_seq}">${list[i-1].comm_title}</a></td>
 								<td>${list[i-1].mb_id}</td>
+								<td>${list[i-1].likes }
 							  </tr>
 							</c:forEach>
 						</tbody>

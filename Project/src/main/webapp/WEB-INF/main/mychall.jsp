@@ -847,7 +847,7 @@
           </select>
         </div>
         <div>
-          <input type="text" class="target_margin" name="pay_money" placeholder="소비금액 입력" />
+          <input type="text" class="target_margin a" value="" name="pay_money" placeholder="소비금액 입력"/>
         </div>
         <ul class="actions fit">
 
@@ -859,8 +859,13 @@
 		function over(){
 			if(${mvo.challenge_total < sum}){
 				alert("으이구~~돈 좀 아껴써라~🤦‍🤦‍♂️🤦💸💸💸💸💸")
+				
 			}
-		}</script>
+			if(document.querySelector("input.a").value==""){
+				alert("금액을 입력하세요.");
+			}
+		}
+		</script>
 
 
 
