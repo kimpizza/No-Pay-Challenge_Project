@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR:wght@300;500&display=swap');
 
 .member_ui{
     width: 100px;
@@ -67,7 +67,7 @@
 
 		background-color: rgb(255, 255, 255);
 		width: 69%;
-		height: 138vh;
+		height: 128vh;
 		padding: 30px;
 		border: 2px solid rgb(20, 26, 53);
 		margin-left: 10px;
@@ -202,7 +202,7 @@
 
 	body, input, select, textarea {
 		color: #141A35;
-		font-family: "Source Sans Pro", sans-serif;
+		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.65em;
@@ -308,7 +308,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		font-family: monospace;
+		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 0.9em;
 		line-height: 1.75em;
 		margin: 0 0 2em 0;
@@ -320,7 +320,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		font-family: monospace;
+		font-family: 'IBM Plex Sans KR', sans-serif;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -2081,7 +2081,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 5px 0;
+		margin: 0 0 2em 0;
 	}
 
 	label {
@@ -2110,7 +2110,7 @@
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
-		margin-top: 5px;
+		margin-top: 8px;
 	}
 
 		input[type="text"]:invalid,
@@ -2201,7 +2201,7 @@
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: 'IBM Plex Sans KR', sans-serif;
 				font-weight: 900;
 			}
 
@@ -2397,7 +2397,7 @@
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+		font-family: 'IBM Plex Sans KR', sans-serif;
 			font-weight: 400;
 		}
 
@@ -2414,7 +2414,7 @@
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: 'IBM Plex Sans KR', sans-serif;
 		}
 
 		.icon.major {
@@ -3304,7 +3304,7 @@
 						text-rendering: auto;
 						line-height: 1;
 						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
+						font-family: 'IBM Plex Sans KR', sans-serif;
 						font-weight: 900;
 					}
 
@@ -3693,8 +3693,9 @@
 		border: 2px solid #141A35;
 		width: 100%;
 		padding: 12px 20px;
-		margin: 5 0 5 0;
+		margin-top: 8px;
 		display: inline-block;
+		
 		box-sizing: border-box;
 		}
 		
@@ -3809,7 +3810,19 @@ box-sizing: border-box;
  
 
 
-
+  body {
+	font-size: 14px;
+	}
+	input[type=text], input[type=password] {
+	border: 2px solid #141A35;
+	width: 100%;
+	padding: 12px 20px;
+	
+	display: inline-block;
+	
+	box-sizing: border-box;
+	}
+	
 	
 	
 	
@@ -4143,120 +4156,5 @@ box-sizing: border-box;
       -o-transition: opacity 1s ease;
       transition: opacity 1s ease;
     }
-.day1{
-      background-color: #ed2a61;
-    }
-    .sec_cal {
-      width: 360px;
-      margin: 0 auto;
-      
-    }
-  
-    .sec_cal .cal_nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 700;
-      font-size: 48px;
-      line-height: 78px;
-    }
-  
-    .sec_cal .cal_nav .year-month {
-      width: 300px;
-      text-align: center;
-      line-height: 1;
-    }
-  
-    .sec_cal .cal_nav .nav {
-      display: flex;
-      border: 1px solid #333333;
-      border-radius: 5px;
-    }
-  
-    .sec_cal .cal_nav .go-prev,
-    .sec_cal .cal_nav .go-next {
-      display: block;
-      width: 50px;
-      height: 78px;
-      font-size: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .sec_cal .cal_nav .go-prev::before,
-    .sec_cal .cal_nav .go-next::before {
-      content: "";
-      display: block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid #000;
-      border-width: 3px 3px 0 0;
-      transition: border 0.1s;
-    }
-  
-    .sec_cal .cal_nav .go-prev:hover::before,
-    .sec_cal .cal_nav .go-next:hover::before {
-      border-color: #ed2a61;
-    }
-  
-    .sec_cal .cal_nav .go-prev::before {
-      transform: rotate(-135deg);
-    }
-  
-    .sec_cal .cal_nav .go-next::before {
-      transform: rotate(45deg);
-    }
-  
-    .sec_cal .cal_wrap {
-      padding-top: 40px;
-      position: relative;
-      margin: 0 auto;
-    }
-  
-    .sec_cal .cal_wrap .days {
-      display: flex;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-    }
-  
-    .sec_cal .cal_wrap::after {
-      top: 368px;
-    }
-  
-    .sec_cal .cal_wrap .day {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: calc(100% / 7);
-      text-align: left;
-      color: #999;
-      font-size: 12px;
-      text-align: center;
-      border-radius: 5px
-    }
-  
-    .current.today {
-      background: rgb(242 242 242);
-    }
-  
-    .sec_cal .cal_wrap .dates {
-      display: flex;
-      flex-flow: wrap;
-      height: 290px;
-    }
-  
-    .sec_cal .cal_wrap .day:nth-child(7n -1) {
-      color: #3c6ffa;
-    }
-  
-    .sec_cal .cal_wrap .day:nth-child(7n) {
-      color: #ed2a61;
-    }
-  
-    .sec_cal .cal_wrap .day.disable {
-      color: #ddd;
-    }
-
-
+ 
+	

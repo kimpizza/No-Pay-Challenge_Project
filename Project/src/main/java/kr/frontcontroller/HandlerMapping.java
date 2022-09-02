@@ -9,9 +9,12 @@ import kr.board.controller.BoardViewController;
 import kr.board.controller.BoardWriteController;
 import kr.board.controller.BoardWriteFormController;
 import kr.board.controller.Controller;
+<<<<<<< HEAD
 import kr.board.controller.LikesCancelController;
 import kr.board.controller.LikesController;
 import kr.board.controller.UploadController;
+=======
+>>>>>>> a4f89a0a9025ce6bb458cba65d28234872fa321f
 import kr.comment.controller.CommWriteController;
 import kr.level.controller.LevelListController;
 import kr.level.controller.LevelWriteController;
@@ -56,10 +59,14 @@ public class HandlerMapping {
 		mappings.put("/challengeForm.do", new ChallengeFormController());
 		mappings.put("/levelList.do", new LevelListController());
 		mappings.put("/levelWriteForm.do", new LevelWriteFormController());
+<<<<<<< HEAD
 		mappings.put("/upload.do", new UploadController());
 		mappings.put("/likes.do", new LikesController());
 		mappings.put("/likesCancel.do", new LikesCancelController());
 
+=======
+		
+>>>>>>> a4f89a0a9025ce6bb458cba65d28234872fa321f
 	}
 	// command를 매개변수로 받아와 그 command에 해당하는 value값 리턴
 	public Controller getController(String command) { // command : key
