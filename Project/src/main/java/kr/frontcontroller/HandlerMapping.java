@@ -9,6 +9,8 @@ import kr.board.controller.BoardViewController;
 import kr.board.controller.BoardWriteController;
 import kr.board.controller.BoardWriteFormController;
 import kr.board.controller.Controller;
+import kr.board.controller.LikesCancelController;
+import kr.board.controller.LikesController;
 import kr.comment.controller.CommWriteController;
 import kr.level.controller.LevelDeleteController;
 import kr.level.controller.LevelListController;
@@ -64,9 +66,11 @@ public class HandlerMapping {
 		mappings.put("/levelUpdate.do", new LevelUpdateController());
 		mappings.put("/levelDelete.do", new LevelDeleteController());
 		mappings.put("/levelComment.do", new LevelCommentController());
+		mappings.put("/likes.do", new LikesController());
+		mappings.put("/likesCancel.do", new LikesCancelController());
 	}
-	// command를 매개변수로 받아와 그 command에 해당하는 value값 리턴
-	public Controller getController(String command) { // command : key
+	public Controller getController(String command) {
+		// TODO Auto-generated method stub
 		return mappings.get(command);
 	}
 }

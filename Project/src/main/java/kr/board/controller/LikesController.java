@@ -9,23 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kr.dao.BoardMyBatisDAO;
+import kr.dao.CommMyBatisDAO;
 import kr.entity.Board;
+import kr.entity.Comment;
 
-
-public class BoardListController implements Controller {
+public class LikesController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Board vo = new Board();
+		// TODO Auto-generated method stub
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		List<Board> list = dao.allList(); // join을 이용해 불러온다
-		request.setAttribute("list", list);
-		System.out.println(list.get(0));
+		HttpSession session =request.getSession();
+		int num = Integer.parseInt(request.getParameter("num"));
+		dao.likesUpdate(num);
 		
+		Board vo = dao.boardView(num); 
+		session.setAttribute("vo", vo); // 게시글 데이터
 		
-		return "boardList";
+		return null;
 	}
-
 
 }

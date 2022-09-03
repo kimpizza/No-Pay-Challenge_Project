@@ -9,6 +9,7 @@ public class Comment {
 	private String mb_id; // 댓글 작성자
 	private String mb_name;
 	
+	
 	public Comment() {
 		
 	}

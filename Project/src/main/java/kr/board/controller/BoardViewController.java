@@ -26,7 +26,12 @@ public class BoardViewController implements Controller {
 		dao.countUpdate(num);
 		request.setAttribute("vo", vo); // 게시글 데이터
 		request.setAttribute("list", list); //댓글데이터
+		System.out.println(vo);
+		
 		return "boardView";
+		
+		
+		
 	}
 
 }

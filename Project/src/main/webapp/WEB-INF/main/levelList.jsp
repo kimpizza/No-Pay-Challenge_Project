@@ -21,22 +21,22 @@
     <nav>
       <ul>
         <li>
-          <a href="mainForm.do">Home</a>
+          <a href="${cpath}/mainForm.do">Home</a>
         </li>
         <li>
-          <a href="savePoint.do">Save Point</a>
+          <a href="${cpath}/savePoint.do">Save Point</a>
         </li>
         <li>
-          <a href="levelList.do">Level</a>
+          <a href="${cpath}/levelList.do">Level</a>
         </li>
         <li>
-          <a href="boardList.do">Board</a>
+          <a href="${cpath}/boardList.do">Board</a>
         </li>
         <li>
-          <a href="main copy 2.html">My Challenge</a>
+          <a href="${cpath}/main copy 2.html">My Challenge</a>
         </li>
         <li>
-          <a href="myPage.do">my page</a>
+          <a href="${cpath}/myPage.do">my page</a>
         </li>
         <li>
           <a class="login_btn" id="login">Login</a>

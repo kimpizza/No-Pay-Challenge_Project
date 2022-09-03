@@ -26,7 +26,6 @@ public class CommWriteController implements Controller {
 		String comment = request.getParameter("comment");
 		HttpSession session = request.getSession();
 		tbl_member mvo = (tbl_member) session.getAttribute("mvo");
-	 	
 		cmt.setMb_id(mvo.getMb_id()); // mb_id가 들어간다
 		cmt.setComm_seq(num);
 		cmt.setComm_cmt_content(comment);

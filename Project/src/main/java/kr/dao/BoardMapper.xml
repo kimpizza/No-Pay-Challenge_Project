@@ -7,17 +7,15 @@
   <!--  게시판 전체 리스트를 가져오는 SQL -->
   <!-- 해당 SQL을 메소드와 연결해서 처리. id : 메소드명, resulttype : return, parameter type : 매개변수 -->
   <select id = "allList" resultType = "kr.entity.Board"><!-- id : DAO의 메소드이름 -->
-    select t.comm_seq, t.comm_title, t.comm_content, t.comm_date, m.mb_name, t.mb_id, t.comm_cnt
-	from TBL_COMMUNITY t INNER JOIN TBL_MEMBER m on t.mb_id = m.mb_id
+    select t.comm_seq, t.comm_title, t.comm_content, t.comm_date, m.mb_name, t.mb_id, t.comm_cnt, t.likes from TBL_COMMUNITY t INNER JOIN TBL_MEMBER m on t.mb_id = m.mb_id
 	order by comm_seq ASC
   </select>
   <insert id = "boardWrite" parameterType="kr.entity.Board"> <!-- id는 dao의 메소드명 -->
-    <!-- INSERT INTO TBL_COMMUNITY values(TBL_COMMUNITY_SEQ.nextval, #{comm_title}, #{comm_content}, sysdate,'작성자',6) -->
-    INSERT INTO tbl_community (comm_title, comm_content, comm_date, mb_id, comm_cnt) VALUES 
-    (#{comm_title}, #{comm_content}, sysdate, #{mb_id},0)<!-- values엔 vo에 들어가있는 값이 들어간다 -->
+INSERT INTO tbl_community (comm_title, comm_content, comm_date, mb_id, comm_cnt, filename) VALUES 
+    (#{comm_title}, #{comm_content}, sysdate, #{mb_id},0,#{filename})<!-- values엔 vo에 들어가있는 값이 들어간다 -->
   </insert>
   <select id = "boardView" parameterType = "int" resultType = "kr.entity.Board"> 
-    select t.comm_seq, t.comm_title, t.comm_content, t.comm_date, t.mb_id, m.mb_name, t.comm_cnt
+    select t.comm_seq, t.comm_title, t.comm_content, t.comm_date, t.mb_id, m.mb_name, t.comm_cnt, t.filename, t.likes
 	from TBL_COMMUNITY t 
 	INNER JOIN TBL_MEMBER m on t.mb_id = m.mb_id
 	where COMM_SEQ = #{COMM_SEQ}
@@ -32,7 +30,7 @@
     update TBL_COMMUNITY set comm_cnt=comm_cnt + 1 where COMM_SEQ = #{comm_seq}
   </update>
   <select id="topList" resultType="kr.entity.Board">
-		SELECT * from tbl_community order by comm_cnt desc
+		SELECT * from tbl_community order by likes desc
   </select>
   
   <select id = "rescent" resultType = "kr.entity.Board">
@@ -44,4 +42,10 @@
 	    )
 	where rownum = 1
   </select>
+  <update id = "likesUpdate" parameterType="int">
+    update TBL_COMMUNITY set likes=likes + 1 where COMM_SEQ = #{comm_seq}
+  </update>
+  <update id = "likesCancel" parameterType="int">
+    update TBL_COMMUNITY set likes=likes - 1 where COMM_SEQ = #{comm_seq}
+  </update>
 </mapper>
