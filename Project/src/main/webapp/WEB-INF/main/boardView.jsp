@@ -80,9 +80,9 @@ pageContext.setAttribute("newLineChar", "\n");
 								</br>
 							</tbody>
 						</table>
-						<input type="hidden" name="num" value = ${vo.comm_seq}>
+						<input type="hidden" name="num" value = ${vo.comm_seq}/>
 						<div class="col-9 col-12-mobilep">
-							<input type="text" name="comment" id="query" value placeholder="댓글을 입력하세요" style="width: 88%;">
+							<input type="text" name="comment" id="query" placeholder="댓글을 입력하세요" style="width: 88%;">
 							<input type="submit" value="작성" style="background-color:#141A35">
 						</div>
 				</form>

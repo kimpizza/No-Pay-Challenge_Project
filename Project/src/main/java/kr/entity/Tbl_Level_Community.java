@@ -1,16 +1,9 @@
 package kr.entity;
 
 public class Tbl_Level_Community {
-	private int level;
-	public int getLevel() {
-		return level;
-	}
 
-	public void setLevel(int level) {
-		this.level = level;
-	}
-
-	private int lv_seq; // 레벨 게시판 글 번호
+	private int level; // 2
+	private int lv_seq; // 레벨 게시판 글 번호 // 21
 	private String lv_title; // 레벨 게시판 제목
 	private String lv_content; // 레벨 게시판 내용
 	private String lv_date; // 레벨 게시판 작성시간
@@ -30,6 +23,7 @@ public class Tbl_Level_Community {
 		this.lv_date = lv_date;
 		this.mb_id = mb_id;
 		this.mb_name = mb_name;
+		this.lv_cnt = lv_cnt;
 	}
 
 	public int getLv_seq() {
@@ -90,4 +84,11 @@ public class Tbl_Level_Community {
 		this.lv_cnt = lv_cnt;
 	}
 
+	public int getLevel() {
+		return level;
+	}
+	
+	public void setLevel(int level) {
+		this.level = level;
+	}
 }

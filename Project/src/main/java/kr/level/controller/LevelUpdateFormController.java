@@ -1,7 +1,6 @@
 package kr.level.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,22 +12,21 @@ import kr.dao.LevelMyBatisDAO;
 import kr.entity.Tbl_Level_Community;
 import kr.entity.tbl_member;
 
-public class LevelListController implements Controller {
+public class LevelUpdateFormController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		LevelMyBatisDAO dao = new LevelMyBatisDAO();
-		
+		int num = Integer.parseInt(request.getParameter("num"));
+		Tbl_Level_Community vo =new Tbl_Level_Community();
 		HttpSession session = request.getSession();
 		tbl_member mvo = (tbl_member) session.getAttribute("mvo");
-		int level = mvo.getMb_level(); // num = 회원등급
-		List<Tbl_Level_Community> list = dao.levelList(level);
-		System.out.println(list);
-		request.setAttribute("list", list);
-		request.setAttribute("mvo", mvo);
-		return "levelList";
+		LevelMyBatisDAO dao = new LevelMyBatisDAO();
+		vo.setLevel(mvo.getMb_level());
+		vo.setLv_seq(num);
+		vo = dao.levelView(vo);
+		request.setAttribute("vo", vo);
+		return "levelUpdate";
 	}
 
 }

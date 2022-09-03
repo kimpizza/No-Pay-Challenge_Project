@@ -12,7 +12,8 @@
 	order by comm_seq ASC
   </select>
   <insert id = "boardWrite" parameterType="kr.entity.Board"> <!-- id는 dao의 메소드명 -->
-    <!-- INSERT INTO TBL_COMMUNITY values(TBL_COMMUNITY_SEQ.nextval, #{comm_title}, #{comm_content}, sysdate,'작성자',6) -->INSERT INTO tbl_community (comm_title, comm_content, comm_date, mb_id, comm_cnt) VALUES 
+    <!-- INSERT INTO TBL_COMMUNITY values(TBL_COMMUNITY_SEQ.nextval, #{comm_title}, #{comm_content}, sysdate,'작성자',6) -->
+    INSERT INTO tbl_community (comm_title, comm_content, comm_date, mb_id, comm_cnt) VALUES 
     (#{comm_title}, #{comm_content}, sysdate, #{mb_id},0)<!-- values엔 vo에 들어가있는 값이 들어간다 -->
   </insert>
   <select id = "boardView" parameterType = "int" resultType = "kr.entity.Board"> 

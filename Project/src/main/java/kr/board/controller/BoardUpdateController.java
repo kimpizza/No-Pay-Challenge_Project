@@ -25,7 +25,8 @@ public class BoardUpdateController implements Controller {
 		vo.setComm_title(title);
 		vo.setComm_content(content);
 		dao.boardUpdate(vo);
-		return "redirect:/boardList.do";
+		System.out.println();
+		return "redirect:/boardView.do?num="+num;
 	}
 
 }
