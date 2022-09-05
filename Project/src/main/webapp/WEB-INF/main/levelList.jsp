@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE HTML>
 <html>
@@ -123,11 +125,12 @@
               </tr>
             </thead>
             <tbody>
-            <c:forEach var = "vo" items="${list}" varStatus="status">
+            <c:set var="volen" value="${fn:length(list)}" />
+            <c:forEach var="i" begin="1" end="${volen}" step="1">
               <tr>
                 <td>${status.index + 1}</td>
-                <td><a href = "levelView.do?num=${vo.lv_seq}">${vo.lv_title}</a></td>
-				<td>${vo.mb_name}</td>
+                <td><a href = "levelView.do?num=${list[volen-i].lv_seq}">${list[volen-i].lv_title}</a></td>
+				<td>${list[volen-i].mb_name}</td>
               </tr>
             </c:forEach>
             </tbody>
