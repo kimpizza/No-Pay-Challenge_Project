@@ -18,25 +18,28 @@
 			<!-- Header -->
 			<nav>
 				<ul>
-				  <li>
-					<a href="main copy 2.html">Home</a>
-				  </li>
-				  <li>
-					<a href="savePoint.html">Save Point</a>
-				  </li>
-				  <li>
-					<a href="boardList.html">Board</a>
-				  </li>
-				  <li>
-					<a href="main copy 2.html">My Challenge</a>
-				  </li>
-				  <li>
-					<a href="myPage.html">my page</a>
-				  </li>
-				  <li>
-					<a class="login_btn" id="login">Login</a>
-				  </li>
-				</ul>
+        <li>
+          <a href="${cpath}/mainForm.do">Home</a>
+        </li>
+        <li>
+          <a href="${cpath}/savePoint.do">Save Point</a>
+        </li>
+        <li>
+          <a href="${cpath}/levelList.do">Level</a>
+        </li>
+        <li>
+          <a href="${cpath}/boardList.do">Board</a>
+        </li>
+        <li>
+          <a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a>
+        </li>
+        <li>
+          <a href="${cpath}/myPage.do">my page</a>
+        </li>
+        <li>
+          <a href="${cpath}/logout.do" class="login_btn" id="login">Logout</a>
+        </li>
+        <ul>
 			  </nav>
 			<br>
 		<br>

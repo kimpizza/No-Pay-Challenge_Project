@@ -33,13 +33,13 @@
           <a href="${cpath}/boardList.do">Board</a>
         </li>
         <li>
-          <a href="${cpath}/main copy 2.html">My Challenge</a>
+          <a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a>
         </li>
         <li>
           <a href="${cpath}/myPage.do">my page</a>
         </li>
         <li>
-          <a class="login_btn" id="login">Login</a>
+          <a href="${cpath}/logout.do" class="login_btn" id="login">Logout</a>
         </li>
         <ul>
           <li><a href="#" onclick="checkLv1()">Lv.1</a></li>

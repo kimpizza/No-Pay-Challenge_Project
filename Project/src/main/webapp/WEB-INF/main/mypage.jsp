@@ -36,7 +36,7 @@
 		    <c:if test="${!empty mvo}">
 		    <li><a href="${cpath}/mainForm.do">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="">Level</a></li>
+			<li><a href="${cpath}/levelList.do">Level</a></li>
 			<li><a href="${cpath}/boardList.do">Board</a></li>
 			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
 		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>

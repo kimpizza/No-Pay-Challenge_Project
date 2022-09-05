@@ -16,26 +16,28 @@
  <!-- Header -->
  <nav>
         <ul>
-			<c:if test="${empty mvo}">
-			<li><a href="${cpath}/mainForm.do">Home</a></li>
-			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="" onclick="checkLogin()">Level</a></li>
-			<li><a href="${cpath}/boardList.do">Board</a></li>
-			<li><a href="" onclick="checkLogin()">My Challenge</a></li>
-			<li><a href="" onclick="checkLogin()">My Page</a></li>
-		    	<li><a class="login_btn" id="login">Login</a></li>
-		    </c:if>
-		    <c:if test="${!empty mvo}">
-		    <li><a href="${cpath}/mainForm.do">Home</a></li>
-			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="">Level</a></li>
-			<li><a href="${cpath}/boardList.do">Board</a></li>
-			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
-		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>
-			    <li><a href="${cpath}/logout.do" class="login_btn">Logout</a></li>
-		    </c:if>
-			
-		</ul>
+        <li>
+          <a href="${cpath}/mainForm.do">Home</a>
+        </li>
+        <li>
+          <a href="${cpath}/savePoint.do">Save Point</a>
+        </li>
+        <li>
+          <a href="${cpath}/levelList.do">Level</a>
+        </li>
+        <li>
+          <a href="${cpath}/boardList.do">Board</a>
+        </li>
+        <li>
+          <a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a>
+        </li>
+        <li>
+          <a href="${cpath}/myPage.do">my page</a>
+        </li>
+        <li>
+          <a href="${cpath}/logout.do" class="login_btn" id="login">Logout</a>
+        </li>
+        <ul>
       </nav>
 			</br>
 

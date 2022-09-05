@@ -30,7 +30,7 @@
 		    <c:if test="${!empty mvo}">
 		    <li><a href="${cpath}/mainForm.do">Home</a></li>
 			<li><a href="${cpath}/savePointList.do">Save Point</a></li>
-			<li><a href="">Level</a></li>
+			<li><a href="${cpath}/levelList.do">Level</a></li>
 			<li><a href="${cpath}/boardList.do">Board</a></li>
 			<li><a href="${cpath}/challengeForm.do?mb_id=${mvo.mb_id}">My Challenge</a></li>
 		   		<li><a href="${cpath}/myPage.do?mb_id=${mvo.mb_id}">My Page</a></li>
@@ -48,10 +48,7 @@
 						<h2 id="title">글제목</h2>
 						<p id="write">관리자</p>
 						<p id="date">${vo.save_date}</p>
-<<<<<<< HEAD
-						<p id="date">날짜</p>
-=======
->>>>>>> a0bf0c862cd9fcea27fc2117f56b554e6562704d
+						
 					</header>
 					<div class="box">
 							<div class="row-6 row-12-mobilep">
@@ -81,7 +78,7 @@
 		</div>
 		<script>
 			document.getElementById("goList").onclick=function(){
-				location.href=("savePoint.html")
+				location.href=("${cpath}/savePointList.do")
 			}
 		</script>
 	</body>

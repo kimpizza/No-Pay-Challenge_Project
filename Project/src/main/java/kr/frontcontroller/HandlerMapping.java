@@ -11,7 +11,6 @@ import kr.board.controller.BoardWriteFormController;
 import kr.board.controller.Controller;
 import kr.board.controller.LikesCancelController;
 import kr.board.controller.LikesController;
-import kr.board.controller.UploadController;
 import kr.comment.controller.CommWriteController;
 import kr.level.controller.LevelListController;
 import kr.level.controller.LevelDeleteController;
@@ -61,9 +60,6 @@ public class HandlerMapping {
 		mappings.put("/challengeForm.do", new ChallengeFormController());
 		mappings.put("/levelList.do", new LevelListController());
 		mappings.put("/levelWriteForm.do", new LevelWriteFormController());
-		mappings.put("/upload.do", new UploadController());
-		
-		
 		mappings.put("/levelWrite.do", new LevelWriteController());
 		mappings.put("/levelView.do", new LevelViewController());
 		mappings.put("/levelUpdateForm.do", new LevelUpdateFormController());
