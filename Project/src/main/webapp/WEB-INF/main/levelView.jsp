@@ -38,46 +38,43 @@
 				  </li>
 				</ul>
 			  </nav>
-			</br>
-		</br>
+			<br>
+		<br>
 		
 			<!-- Main -->
-				<section id="main" class="container">
+			<section id="main" class="container">
 					<header>
-						<h2 id="title">글제목</h2>
-						<p id="write">작성자</p>
-						<p id="date">2022-08-22</p>
+						<h2 id="title">${vo.lv_title}</h2>
+						<p id="write">${vo.mb_name}</p>
+						<p id="date">${vo.lv_date}</p>
 					</header>
 					<div class="box">
 							<div class="row-6 row-12-mobilep">
-								<p>무지출챌린지 화이팅</br>무지출챌린지 화이팅</p>
+								<p>${vo.lv_content}</p>
 							</div>
 			<!--코멘트창-->
-			<form class="comm_comment">
+			<form class="comm_comment" action="${cpath}/levelComment.do"method="get">
 					<h3 style="margin-top: 8%;margin-bottom: -2%;">comment</h3>
 					<div class="table-wrapper">
 						
 						<table>
-					
+						
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td></td>
-									<td></td>
-								</tr>
+								<c:forEach var="vo" items="${list}" varStatus="status">
+										<tr>
+											<td>${status.index + 1}</td>
+											<td>${vo.lv_cmt_content}</td>
+											<td>${vo.mb_name}</td>
+										</tr>
+									</c:forEach>
 							</br>
 							</tbody>
 							
 						</table>
-					
+						<input type="hidden" name="num" value="${vo.lv_seq}"> 
 						<div class="col-9 col-12-mobilep">
-							<input type="text" name="query" id="query" value placeholder="댓글을 입력하세요" style="width: 88%;">
-							<input type="submit" value="작성" style="background-color:#141A35">
+							<input type="text" name="content" id="query" placeholder="댓글을 입력하세요" style="width: 88%;">
+							<input type="submit" value="작성" style="background-color:#141A35" id="lv_comment">
 						</div>
 					
 					</form>
@@ -108,12 +105,16 @@
 		</footer>
 		<script>
 			document.getElementById("goList").onclick=function(){
-				location.href=("boardList.html")
+				location.href=("${cpath}/levelList.do")
 			}
-		</script>
-		<script>
 			document.getElementById("update").onclick=function(){
-				location.href=("boardUpdate.html")
+				location.href=("${cpath}/levelUpdateForm.do?num=${vo.lv_seq}")
+			}
+			document.getElementById("delete").onclick=function(){
+				location.href=("${cpath}/levelDelete.do?num=${vo.lv_seq}")
+			}
+			document.getElementById("lv_comment").onclick=function(){
+				location.href=("${cpath}/levelDelete.do?num=${vo.lv_seq}")
 			}
 		</script>
 	</body>

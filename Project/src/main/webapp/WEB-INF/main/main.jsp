@@ -197,7 +197,7 @@
 							<c:forEach var="i" begin="1" end="5" step="1">
 							  <tr>
 								<td>${i}</td>  
-								<td><a href="${cpath}/boardView.do?num=${list[i-1].comm_seq}" style="text-decoration-line:none !important;">${list[i-1].comm_title} [${list[i-1].comment_count}]</a></td>
+								<td><a href="${cpath}/boardView.do?num=${list[i-1].comm_seq}" style="text-decoration-line:none;">${list[i-1].comm_title} [${list[i-1].comment_count}]</a></td>
 								<td>${list[i-1].mb_id}</td>
 								<td>${list[i-1].likes }
 							  </tr>

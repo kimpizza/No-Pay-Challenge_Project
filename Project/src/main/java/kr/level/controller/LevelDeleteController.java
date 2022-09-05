@@ -12,29 +12,20 @@ import kr.dao.LevelMyBatisDAO;
 import kr.entity.Tbl_Level_Community;
 import kr.entity.tbl_member;
 
-public class LevelWriteController implements Controller {
+public class LevelDeleteController implements Controller {
 
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		int num = Integer.parseInt(request.getParameter("num"));
 		LevelMyBatisDAO dao = new LevelMyBatisDAO();
-		
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
 		HttpSession session = request.getSession();
-		tbl_member mvo = (tbl_member) session.getAttribute("mvo"); // 회원세션 가져오기
-		String id = mvo.getMb_id();
+		tbl_member mvo = (tbl_member) session.getAttribute("mvo");
 		int level = mvo.getMb_level();
 		Tbl_Level_Community vo = new Tbl_Level_Community();
+		vo.setLv_seq(num);
 		vo.setLevel(level);
-		vo.setLv_title(title);
-		vo.setLv_content(content);
-		vo.setMb_id(id);
-		
-		dao.levelWrite(vo);
-		
+		dao.levelDelete(vo);
 		return "redirect:/levelList.do";
 	}
-
 }

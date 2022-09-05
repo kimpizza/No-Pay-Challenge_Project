@@ -45,7 +45,7 @@ public class BoardWriteController implements Controller {
 		 // String uploadFilePath = context.getRealPath(savePath);
 		 
 		 
-		String uploadFilePath = "C:/Users/aischool/Desktop/imgs";
+		String uploadFilePath = "C:\\Users\\Aischool\\Desktop\\imgs";
 		
 		System.out.println("서버상의 실제 디렉토리 : ");
 		System.out.println(uploadFilePath);

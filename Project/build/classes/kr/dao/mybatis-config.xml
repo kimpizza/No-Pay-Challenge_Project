@@ -24,5 +24,6 @@
     <mapper resource="kr/dao/MemberMapper.xml"/>
     <mapper resource="kr/dao/ChallMapper.xml"/>
     <mapper resource="kr/dao/LevelMapper.xml"/>
+   
   </mappers>
 </configuration>
