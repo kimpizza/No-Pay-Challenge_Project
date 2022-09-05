@@ -100,26 +100,13 @@
                   <th>이름</th>
                 </tr>
               </thead>
-              <tr>
-                <td>1등</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2등</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3등</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>4등</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>5등</td>
-                <td></td>
-              </tr>
+              
+            <c:forEach var="vo" items="${list1}" varStatus="status">
+				<tr>
+					<td>${status.index+1}등 </td>
+					<td> ${vo.mb_name}</td>
+				</tr>
+			</c:forEach>	
             </table>
           </div>
         </div>
@@ -182,7 +169,7 @@
   let options = {
     startAngle: -1.55,
     /*나의 달성도 값 부분*/
-    value: 0.70,
+    value: ${avg}/100,
     size: 150,
     fill: {
       gradient: ['#FF774D', '#FFCB46']
@@ -199,7 +186,7 @@
   let options2 = {
     startAngle: -1.55,
     /*전체 달성도 값 부분*/
-    value: 0.50,
+    value: ${avg1}/100,
     size: 150,
     fill: {
       gradient: ['#122F5D', '#1A62B8']

@@ -8,10 +8,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import kr.entity.Mb_Level;
 import kr.entity.Tbl_Level_Community;
 
 public class LevelMyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory; // connection을 빼야함
+	private Mb_Level vo;
+	private Mb_Level vo2;
 	static { // 초기화 블럭(프로그램 실행 시 딱 한번만 실행)
 		try {		
 			String resource = "kr/dao/mybatis-config.xml";
@@ -76,5 +79,34 @@ public class LevelMyBatisDAO {
 		session.close();
 		return vo;
 	}
+	 public int levelMyChart(Mb_Level vo1) {
+			SqlSession session= sqlSessionFactory.openSession();
+			vo2 = new Mb_Level();
+			System.out.println(vo1.getMb_id());
+		    int avg = session.selectOne("levelMyChart", vo1); 
+			System.out.println(avg);
+			session.close(); // 세션 반납
+			return avg;
+		}
+	   public int levelChart(Mb_Level vo1) {
+			
+			SqlSession session= sqlSessionFactory.openSession();
+			vo = new Mb_Level();
+			System.out.println(vo1.getMb_id());
+		    int avg1 = session.selectOne("levelChart", vo1); 
+			System.out.println(avg1);
+			session.close(); // 세션 반납
+			return avg1;
+		}
+	   
+	   public List<Mb_Level> rankingList(int level){
+		   SqlSession session= sqlSessionFactory.openSession(); 
+		   Mb_Level mt = new Mb_Level();
+		   mt.setMb_level(level);
+		   List<Mb_Level> list = session.selectList("rankingList", mt); 
+		   System.out.println(list.get(0).getMb_name());
+			session.close(); // 세션 반납
+			return list;
+	   } 
 	
 }

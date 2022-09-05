@@ -8,5 +8,29 @@
 	from TBL_LEVEL_COMMUNITY_${level} l INNER JOIN TBL_MEMBER m on l.mb_id = m.mb_id
 	order by LV_SEQ ASC
   </select>
-  
+  <select id="levelMyChart" resultType="int" parameterType="kr.entity.Mb_Level">
+	select round((m.challenge_total - sum(c.pay_money) )/m.challenge_total*100)
+from tbl_member m, tbl_member_challenge c 
+where m.mb_id = c.mb_id and pay_date between '22/08/01' and '22/09/07'
+and m.mb_id = #{mb_id}
+group by m.mb_id,m.challenge_total
+</select>
+<select id="levelChart" resultType="int" parameterType="kr.entity.Mb_Level" >
+select round(avg(a),1) from (select m.mb_level, m.mb_id,(m.challenge_total - sum(c.pay_money) )/m.challenge_total*100 a
+from tbl_member m, tbl_member_challenge c 
+where m.mb_id = c.mb_id and pay_date between '22/08/01' and '22/09/07'
+group by m.mb_level, m.mb_id,m.challenge_total)
+where mb_level = ${mb_level}
+group by mb_level
+</select>
+
+<select id="rankingList" parameterType="kr.entity.Mb_Level" resultType="kr.entity.Mb_Level" >
+select distinct m.mb_name,round((m.challenge_total - sum(c.pay_money) )/m.challenge_total*100,1) a
+from tbl_member m, tbl_member_challenge c 
+where m.mb_id = c.mb_id and pay_date between '22/08/01' and '22/09/07'
+and m.mb_level = ${mb_level}
+group by m.mb_name,m.challenge_total
+order by a desc 
+</select>
+   
 </mapper>
