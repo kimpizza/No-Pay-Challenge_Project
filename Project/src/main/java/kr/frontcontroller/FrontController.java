@@ -25,10 +25,10 @@ public class FrontController extends HttpServlet {
 		Controller controller = null;
 		// command에 따른 분기 작업
 		HandlerMapping mapping = new HandlerMapping();
-		controller = mapping.getController(command); //boardList.do 전달
+		controller = mapping.getController(command); //boardList.do 전달다아
 		nextPage = controller.requestProcessor(request, response); // NPE 에러발생
 		if(nextPage!=null) { // nextpage값이 있다면
-			if(nextPage.indexOf("redirect:") == -1) { // redirect:라는 것이 없으면
+			if(nextPage.indexOf("redirect:") == -1) { // redirect:라는 것이 없으면 -1: 없다
 				//forward
 				RequestDispatcher rd = request.getRequestDispatcher(ViewResolver.makeView(nextPage));
 				rd.forward(request, response);

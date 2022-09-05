@@ -30,9 +30,7 @@ public class LevelListController implements Controller {
 		int level = mvo.getMb_level(); // num = 회원등급
 		
 		List<Tbl_Level_Community> list = dao.levelList(level);
-		System.out.println(list);
 		request.setAttribute("list", list);
-		
 	
 		Mb_Level vo = new Mb_Level();
 		vo1 = new Mb_Level();
@@ -47,8 +45,9 @@ public class LevelListController implements Controller {
 	    
 	   
 	    List<Mb_Level> list1 = dao.rankingList(level);
-		request.setAttribute("list",list1);
+		request.setAttribute("list1",list1);
 		
+		request.setAttribute("mvo", mvo);
 		return "levelList";
 	}
 

@@ -21,22 +21,22 @@
     <nav>
       <ul>
         <li>
-          <a href="mainForm.do">Home</a>
+          <a href="${cpath}/mainForm.do">Home</a>
         </li>
         <li>
-          <a href="savePoint.do">Save Point</a>
+          <a href="${cpath}/savePoint.do">Save Point</a>
         </li>
         <li>
-          <a href="levelList.do">Level</a>
+          <a href="${cpath}/levelList.do">Level</a>
         </li>
         <li>
-          <a href="boardList.do">Board</a>
+          <a href="${cpath}/boardList.do">Board</a>
         </li>
         <li>
-          <a href="main copy 2.html">My Challenge</a>
+          <a href="${cpath}/main copy 2.html">My Challenge</a>
         </li>
         <li>
-          <a href="myPage.do">my page</a>
+          <a href="${cpath}/myPage.do">my page</a>
         </li>
         <li>
           <a class="login_btn" id="login">Login</a>
@@ -49,22 +49,16 @@
           <li><a href="#" onclick="checkLv5()">Lv.5</a></li>
         </ul>
       </ul>
-      <script>
-        function checkLv1() {
-        	alert("Lv.1 회원만 접근 가능합니다😊")
+      <script>      
+        function checkLv${mvo.mb_level}(){
+	        if(${mvo.mb_level} == checkLv${mvo.mb_level}){
+        		location.href = "${cpath}/levelList.do"
+        	}else{
+        		alert("회원님은 ${mvo.mb_level}입니다. 내 등급 회원게시판만 입장이 가능합니다")
+        	}
         }
-        function checkLv2() {
-        	alert("Lv.2 회원만 접근 가능합니다😊")
-        }
-        function checkLv3() {
-        	alert("Lv.3 회원만 접근 가능합니다😊")
-        }
-        function checkLv4() {
-        	alert("Lv.4 회원만 접근 가능합니다😊")
-        }
-        function checkLv5() {
-        	alert("Lv.5 회원만 접근 가능합니다😊")
-        }
+      
+        	
       </script>
     </nav>
     <div class="box">
@@ -101,10 +95,10 @@
                 </tr>
               </thead>
               
-            <c:forEach var="vo" items="${list1}" varStatus="status">
+            <c:forEach var="vo1" items="${list1}" varStatus="status">
 				<tr>
 					<td>${status.index+1}등 </td>
-					<td> ${vo.mb_name}</td>
+					<td> ${vo1.mb_name}</td>
 				</tr>
 			</c:forEach>	
             </table>
@@ -132,8 +126,8 @@
             <c:forEach var = "vo" items="${list}" varStatus="status">
               <tr>
                 <td>${status.index + 1}</td>
-                <td>${vo.lv_title}</td>
-				<td>${vo.lv_content}</td>
+                <td><a href = "levelView.do?num=${vo.lv_seq}">${vo.lv_title}</a></td>
+				<td>${vo.mb_name}</td>
               </tr>
             </c:forEach>
             </tbody>
@@ -179,7 +173,7 @@
     $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
   });
   function goWrite(){
-	  location.href = "${cpath}/levelWriteForm.do
+	  location.href = "${cpath}/levelWriteForm.do"
   }
 </script>
 <script>

@@ -50,14 +50,14 @@
 					</header>
 
 					<div class="box">
-						<form method="post" action="#">
+						<form method="get" action="${cpath}/levelWrite.do">
 							<div class="row gtr-50 gtr-uniform">
 								
 								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="글 제목을 입력하세요." />
+									<input type="text" name="title" id="subject" value="" placeholder="글 제목을 입력하세요." />
 								</div>
 								<div class="col-12">
-									<textarea name="message" id="message" placeholder="글 내용을 입력하세요." rows="6"></textarea>
+									<textarea name="content" id="message" placeholder="글 내용을 입력하세요." rows="6"></textarea>
 								</br>
 								</div>
 								<div class="col-12">

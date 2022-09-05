@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import kr.entity.Mb_Level;
 import kr.entity.Tbl_Level_Community;
+import kr.entity.tbl_level_comment;
 
 public class LevelMyBatisDAO {
 	private static SqlSessionFactory sqlSessionFactory; // connection을 빼야함
@@ -31,12 +32,25 @@ public class LevelMyBatisDAO {
 		SqlSession session= sqlSessionFactory.openSession(); // openSession = 세션을 꺼내온다
 		// mapper파일에 있는 select문 실행 (SQL연결)		
 		// SQL 쿼리를 알아야 한다
-		System.out.println("level:"+level);
 		Tbl_Level_Community tb = new Tbl_Level_Community();
 		tb.setLevel(level);
 		List<Tbl_Level_Community> list = session.selectList("levelList", tb); // 여러개를 가져오는 selectList / id이름을 찾아간다
 		session.close(); // 세션 반납
 		return list;
+	}
+	//댓글 불러오기
+	public List<Tbl_Level_Community> lv_comm_AllList(Tbl_Level_Community vo) {
+		SqlSession session= sqlSessionFactory.openSession(); // openSession = 세션을 꺼내온다
+		List<Tbl_Level_Community> list = session.selectList("lv_comm_AllList", vo); // 여러개를 가져오는 selectList / id이름을 찾아간다
+		session.close(); // 세션 반납
+		return list;
+	}
+	//댓글 쓰기 
+	public void Tbl_Level_Community_comm(tbl_level_comment vo) {
+		SqlSession session = sqlSessionFactory.openSession();
+		session.insert("Tbl_Level_Community_comm",vo);
+		session.commit();
+		session.close();
 	}
 	
 	public void levelWrite(Tbl_Level_Community vo) {
@@ -51,11 +65,10 @@ public class LevelMyBatisDAO {
 		session.update("levelCountUpdate", level);
 		session.commit();
 		session.close();
-	}
-
-	public Tbl_Level_Community levelView(int num) {
+	} 
+	public Tbl_Level_Community levelView(Tbl_Level_Community vo1) {
 		SqlSession session= sqlSessionFactory.openSession();
-		Tbl_Level_Community vo = session.selectOne("levelView", num); // select할 num
+		Tbl_Level_Community vo = session.selectOne("levelView", vo1); // 왼쪽 : id / 오른쪽 : 데이터
 		session.close();
 		return vo;
 	}
@@ -67,15 +80,15 @@ public class LevelMyBatisDAO {
 		session.close();
 	}
 
-	public void levelDelete(int num) {
+	public void levelDelete(Tbl_Level_Community haha) {
 		SqlSession session= sqlSessionFactory.openSession();
-		session.delete("levelDelete", num);
+		session.delete("levelDelete", haha);
 		session.commit();
 		session.close();
 	}
 	public Tbl_Level_Community levelrescent() {
 		SqlSession session = sqlSessionFactory.openSession();
-		Tbl_Level_Community vo = session.selectOne("levelrescent"); 
+		Tbl_Level_Community vo = session.selectOne("levelrescent");
 		session.close();
 		return vo;
 	}

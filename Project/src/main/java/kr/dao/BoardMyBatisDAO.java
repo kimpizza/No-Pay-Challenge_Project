@@ -80,4 +80,17 @@ public class BoardMyBatisDAO {
 		session.close();
 		return vo;
 	}
+	public void likesUpdate(int num) {
+		SqlSession session= sqlSessionFactory.openSession();
+		session.update("likesUpdate", num);
+		session.commit();
+		session.close();
+	}
+	public void likesCancel(int num) {
+		SqlSession session= sqlSessionFactory.openSession();
+		session.update("likesCancel", num);
+		session.commit();
+		session.close();
+	}
+	
 }

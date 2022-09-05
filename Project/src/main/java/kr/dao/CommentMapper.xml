@@ -20,4 +20,8 @@
     <delete id = "commDelete" parameterType='int'>
       Delete from TBL_COMM_COMMENT where COMM_SEQ = #{comm_seq}
     </delete>
+    
+	  <select id="commentCount" resultType="int">
+	  	select count(*) from tbl_community c inner join tbl_comm_comment cc on c.comm_seq = cc.comm_seq where cc.comm_seq = #{comm_seq};
+	  </select>
 </mapper>

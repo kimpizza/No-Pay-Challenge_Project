@@ -28,11 +28,14 @@ public class UploadController implements Controller {
 		int uploadFileSizeLimit = 5*1024*1024;
 		String encType = "UTF-8";
 		
-		ServletContext context =  request.getSession().getServletContext(); 
+		ServletContext context =  request.getSession().getServletContext();
 		String uploadFilePath = context.getRealPath(savePath);
+		System.out.println(uploadFilePath);
+		uploadFilePath = "C:/Users/aischool/Desktop/imgs"; 
+		
 		System.out.println("서버상의 실제 디렉토리 : ");
 		System.out.println(uploadFilePath);
-		
+		// 엥 이 컨트롤러 안쓰는 애였어요? 아 맞아 여기 복사해서 딴데다가 어디였지 view였나  ㅋㅋㅋㅋㅋㅋㅋ 네네 ㄴㄴㄴ 저기
 		try {
 			MultipartRequest multi = new MultipartRequest(
 				request,
