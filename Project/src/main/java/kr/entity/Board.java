@@ -10,7 +10,7 @@ public class Board {
 	private int comm_cnt; // 조회수
 	private String filename;
 	private int likes; // 좋아요 
-	private int count; // 댓글 개수
+	private int comment_count; // 댓글 개수
 	public Board() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -69,17 +69,17 @@ public class Board {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
-	public int getCount() {
-		return count;
+	public int getcomment_count() {
+		return comment_count;
 	}
-	public void setCount(int count) {
-		this.count = count;
+	public void setcomment_count(int comment_count) {
+		this.comment_count = comment_count;
 	}
 	@Override
 	public String toString() {
 		return "Board [comm_seq=" + comm_seq + ", comm_title=" + comm_title + ", comm_content=" + comm_content
 				+ ", comm_date=" + comm_date + ", mb_id=" + mb_id + ", mb_name=" + mb_name + ", comm_cnt=" + comm_cnt
-				+ ", filename=" + filename + ", likes=" + likes + ", count=" + count + "]";
+				+ ", filename=" + filename + ", likes=" + likes + ", comment_count=" + comment_count + "]";
 	}
 	
 	

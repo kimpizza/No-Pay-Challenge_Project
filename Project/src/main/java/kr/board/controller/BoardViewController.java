@@ -22,10 +22,11 @@ public class BoardViewController implements Controller {
 		CommMyBatisDAO dao1 = new CommMyBatisDAO();
 		int num = Integer.parseInt(request.getParameter("num")); // 게시판 번호
 		Board vo = dao.boardView(num); 
-		List<Comment> list= dao1.commAllList(num); // 댓글데이터 가져오기
+		List<Comment> comment= dao1.commAllList(num); // 댓글데이터 가져오기
 		dao.countUpdate(num);
+		dao.commentCount(num);
 		request.setAttribute("vo", vo); // 게시글 데이터
-		request.setAttribute("list", list); //댓글데이터
+		request.setAttribute("comment", comment); //댓글데이터
 		System.out.println(vo);
 		
 		return "boardView";

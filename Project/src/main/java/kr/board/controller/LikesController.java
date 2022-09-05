@@ -20,12 +20,11 @@ public class LikesController implements Controller {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
-		HttpSession session =request.getSession();
 		int num = Integer.parseInt(request.getParameter("num"));
 		dao.likesUpdate(num);
 		
 		Board vo = dao.boardView(num); 
-		session.setAttribute("vo", vo); // 게시글 데이터
+		request.setAttribute("vo", vo); // 게시글 데이터
 		
 		return null;
 	}

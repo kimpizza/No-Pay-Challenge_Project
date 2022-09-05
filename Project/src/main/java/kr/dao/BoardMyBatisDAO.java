@@ -92,5 +92,11 @@ public class BoardMyBatisDAO {
 		session.commit();
 		session.close();
 	}
+	public void commentCount(int num) {
+		SqlSession session= sqlSessionFactory.openSession();
+		session.update("commentCount", num);
+		session.commit();
+		session.close();
+	}
 	
 }

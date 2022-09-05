@@ -13,6 +13,7 @@
 		<link rel="stylesheet" href="CSS/모달.css" />
 		<link rel="stylesheet" href="CSS/연습.css" />
     	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    	<script src="CSS/jquery-3.6.0.min.js"></script>
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 		<style></style>
@@ -196,7 +197,7 @@
 							<c:forEach var="i" begin="1" end="5" step="1">
 							  <tr>
 								<td>${i}</td>  
-								<td><a href="${cpath}/boardView.do?num=${list[i-1].comm_seq}">${list[i-1].comm_title}</a></td>
+								<td><a href="${cpath}/boardView.do?num=${list[i-1].comm_seq}" style="text-decoration-line:none !important;">${list[i-1].comm_title} [${list[i-1].comment_count}]</a></td>
 								<td>${list[i-1].mb_id}</td>
 								<td>${list[i-1].likes }
 							  </tr>
@@ -213,6 +214,7 @@
 			</ul>
 		</footer>
 		<script>
+		
 			
 			/*모달스크립트*/
 			const body_login = document.querySelector('body');

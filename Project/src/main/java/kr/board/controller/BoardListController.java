@@ -17,13 +17,12 @@ public class BoardListController implements Controller {
 	@Override
 	public String requestProcessor(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Board vo = new Board();
 		BoardMyBatisDAO dao = new BoardMyBatisDAO();
 		List<Board> list = dao.allList(); // join을 이용해 불러온다
-		request.setAttribute("list", list);
+		HttpSession session =request.getSession();
 		System.out.println(list.get(0));
-		
-		
+		session.setAttribute("list", list);
+
 		return "boardList";
 	}
 

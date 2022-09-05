@@ -57,7 +57,6 @@ public class HandlerMapping {
 		mappings.put("/levelWriteForm.do", new LevelWriteFormController());
 		mappings.put("/likes.do", new LikesController());
 		mappings.put("/likesCancel.do", new LikesCancelController());
-
 	}
 	public Controller getController(String command) {
 		// TODO Auto-generated method stub

@@ -146,7 +146,7 @@ pageContext.setAttribute("newLineChar", "\n");
 					<table>
 						<tbody>
 							<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
-							<c:forEach var="vo" items="${list}" varStatus="status">
+							<c:forEach var="vo" items="${comment}" varStatus="status">
 								<!-- 컨트롤러에서 setAttribute가 넘어온다 -->
 								<tr>
 									<td>${status.index + 1}</td>
